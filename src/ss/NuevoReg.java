@@ -7,14 +7,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *@author  
- *José Rodrigo Narváez Berlanga A01377566	
- *Miguel Ángel Garza González A01377346
- *Jorge Alexis Rubio Sumano A01372074
- */
-/**
- * 
- * jFrame que muestra el panel para crear un Nuevo Usuario
+ *
+ * @author 
+ * Dachely Otero Argote
+ * Ernesto Alejandro Cervantes Villa
+ * Jorge Alexis Rubio Sumano
  * 
  */
 public class NuevoReg extends javax.swing.JFrame {

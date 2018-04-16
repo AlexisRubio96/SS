@@ -3,16 +3,12 @@ package ss;
 
 import java.io.FileReader;
 import java.io.IOException;
-
 /**
- *@author  
- *José Rodrigo Narváez Berlanga A01377566	
- *Miguel Ángel Garza González A01377346
- *Jorge Alexis Rubio Sumano A01372074
- */
-/**
- * Genera un arreglo con los usuarios obtenidos del respaldo
- * Agrega nuevos usuarios
+ *
+ * @author 
+ * Dachely Otero Argote
+ * Ernesto Alejandro Cervantes Villa
+ * Jorge Alexis Rubio Sumano
  * 
  */
 public class ListaRegistros{
