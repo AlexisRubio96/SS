@@ -14,25 +14,24 @@ import java.util.logging.Logger;
  * Jorge Alexis Rubio Sumano
  * 
  */
-public class NuevoReg extends javax.swing.JFrame {
+public class JF_NuevoReg extends javax.swing.JFrame {
     
-    private ListaUsuarios lista;
+    //private ListaUsuarios lista;
     
     /**
      * Creates new form NuevoUsuario
      */
-    public NuevoReg() {
+    public JF_NuevoReg() {
         initComponents();
         this.getContentPane().setBackground(jPanel1.getBackground());
-        jLPassWrong.setVisible(false);      //Label que se muestra si contraseña es incorrecta
-        jLCamposObligatorios.setVisible(false);
         pack();
     }
     
+    /*
     public NuevoReg(ListaUsuarios lista) throws IOException{
         this();
         this.lista = lista;
-    }
+    }*/
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -45,18 +44,18 @@ public class NuevoReg extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLNombre = new javax.swing.JLabel();
-        nombre = new javax.swing.JTextField();
+        jpNombre = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        apellido = new javax.swing.JTextField();
+        jpEdad = new javax.swing.JTextField();
         jLUserName = new javax.swing.JLabel();
-        userName = new javax.swing.JTextField();
+        jpSexo = new javax.swing.JTextField();
         jLPass1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        pass1 = new javax.swing.JPasswordField();
-        pass2 = new javax.swing.JPasswordField();
+        jpPeso = new javax.swing.JPasswordField();
+        jpApellido = new javax.swing.JPasswordField();
         jLabel6 = new javax.swing.JLabel();
-        correo = new javax.swing.JTextField();
-        rol = new javax.swing.JComboBox();
+        jpTalla = new javax.swing.JTextField();
+        jpCategoria = new javax.swing.JComboBox();
         jLabel8 = new javax.swing.JLabel();
         jBguardar = new javax.swing.JButton();
         jBcancelar = new javax.swing.JButton();
@@ -76,22 +75,22 @@ public class NuevoReg extends javax.swing.JFrame {
         jLNombre.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         jLNombre.setText("Nombre(s):");
 
-        nombre.setColumns(10);
-        nombre.addActionListener(new java.awt.event.ActionListener() {
+        jpNombre.setColumns(10);
+        jpNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nombreActionPerformed(evt);
+                jpNombreActionPerformed(evt);
             }
         });
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         jLabel2.setText("Apellido(s):");
 
-        apellido.setColumns(10);
+        jpEdad.setColumns(10);
 
         jLUserName.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         jLUserName.setText("Edad:");
 
-        userName.setColumns(10);
+        jpSexo.setColumns(10);
 
         jLPass1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         jLPass1.setText("Sexo:");
@@ -99,26 +98,26 @@ public class NuevoReg extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         jLabel5.setText("Peso:");
 
-        pass1.setColumns(10);
+        jpPeso.setColumns(10);
 
-        pass2.setColumns(10);
+        jpApellido.setColumns(10);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         jLabel6.setText("Talla:");
 
-        correo.setColumns(15);
+        jpTalla.setColumns(15);
 
-        rol.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        rol.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Alumno", "Maestro", "Jefe De Familia", "Preparadores de Comida", "Directivo", "Voluntario" }));
-        rol.setToolTipText("");
-        rol.addActionListener(new java.awt.event.ActionListener() {
+        jpCategoria.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jpCategoria.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Alumno", "Maestro", "Jefe De Familia", "Preparadores de Comida", "Directivo", "Voluntario" }));
+        jpCategoria.setToolTipText("");
+        jpCategoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rolActionPerformed(evt);
+                jpCategoriaActionPerformed(evt);
             }
         });
 
         jLabel8.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
-        jLabel8.setText("Rol:");
+        jLabel8.setText("Categoria:");
 
         jBguardar.setBackground(new java.awt.Color(0, 102, 102));
         jBguardar.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
@@ -157,13 +156,13 @@ public class NuevoReg extends javax.swing.JFrame {
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(apellido, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(correo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
-                    .addComponent(pass2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jpEdad, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jpTalla, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                    .addComponent(jpApellido, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(pass1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(userName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(nombre, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addComponent(jpPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jpSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jpNombre, javax.swing.GroupLayout.Alignment.LEADING))
                 .addGap(56, 56, 56)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -173,7 +172,7 @@ public class NuevoReg extends javax.swing.JFrame {
                         .addGap(52, 52, 52))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jpCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jBguardar)
                                 .addGap(18, 18, 18)
@@ -189,30 +188,30 @@ public class NuevoReg extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel2)
-                                .addComponent(pass2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jpApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jpNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLNombre))
                                 .addGap(35, 35, 35)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(apellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jpEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLUserName)))
                     .addComponent(jLabel1))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLPass1)
-                    .addComponent(userName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jpSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(pass1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jpPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(correo, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jpTalla, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jpCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -220,6 +219,11 @@ public class NuevoReg extends javax.swing.JFrame {
                     .addComponent(jBcancelar))
                 .addContainerGap(52, Short.MAX_VALUE))
         );
+
+        jpNombre.getAccessibleContext().setAccessibleName("jpNombre");
+        jpNombre.getAccessibleContext().setAccessibleDescription("");
+        jpEdad.getAccessibleContext().setAccessibleName("jpEdad");
+        jpApellido.getAccessibleContext().setAccessibleName("jpApellido");
 
         getContentPane().add(jPanel1);
 
@@ -234,44 +238,21 @@ public class NuevoReg extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreActionPerformed
+    private void jpNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jpNombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nombreActionPerformed
+    }//GEN-LAST:event_jpNombreActionPerformed
 
     private void jBguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBguardarActionPerformed
-        //Falta: comprobar caracteres permitidos, confirmar guardado/cancelado, implmentar boton de canelar
-        boolean pass = false;
-        boolean camposObligatorios = true;
-        if(pass1.getText().equals(pass2.getText())){        //Compara contraseñas escritas
-            pass = true;
-        }
-        if(pass == true){
-            if(userName.getText().equals("")==true || pass1.getText().equals("")==true || nombre.getText().equals("")==true){
-                camposObligatorios = false;
-            }
-            if(camposObligatorios == true){
-                try {
-                    lista.nuevoUsuario(userName.getText(), pass1.getText(), nombre.getText(), apellido.getText(), telefono.getText(), correo.getText(), rol.getModel().getSelectedItem().toString());
-                } catch (IOException ex) {
-                    System.out.println("No se encontro archhivo");
-                }
-                this.setVisible(false);
-            }else{
-                jLCamposObligatorios.setVisible(true);
-            }
-        }else{
-            jLPass1.setForeground(Color.red);       //Pinta el foreground del laberl de contraseña de rojo
-            jLPassWrong.setVisible(true);
-        }
+
     }//GEN-LAST:event_jBguardarActionPerformed
 
     private void jBcancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBcancelarActionPerformed
             this.setVisible(false);
     }//GEN-LAST:event_jBcancelarActionPerformed
 
-    private void rolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rolActionPerformed
+    private void jpCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jpCategoriaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_rolActionPerformed
+    }//GEN-LAST:event_jpCategoriaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -290,27 +271,26 @@ public class NuevoReg extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NuevoUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JF_NuevoReg.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NuevoUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JF_NuevoReg.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NuevoUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JF_NuevoReg.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NuevoUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JF_NuevoReg.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NuevoUsuario().setVisible(true);
+                new JF_NuevoReg().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField apellido;
-    private javax.swing.JTextField correo;
     private javax.swing.JButton jBcancelar;
     private javax.swing.JButton jBguardar;
     private javax.swing.JLabel jLNombre;
@@ -325,10 +305,12 @@ public class NuevoReg extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField nombre;
-    private javax.swing.JPasswordField pass1;
-    private javax.swing.JPasswordField pass2;
-    private javax.swing.JComboBox rol;
-    private javax.swing.JTextField userName;
+    private javax.swing.JPasswordField jpApellido;
+    private javax.swing.JComboBox jpCategoria;
+    private javax.swing.JTextField jpEdad;
+    private javax.swing.JTextField jpNombre;
+    private javax.swing.JPasswordField jpPeso;
+    private javax.swing.JTextField jpSexo;
+    private javax.swing.JTextField jpTalla;
     // End of variables declaration//GEN-END:variables
 }

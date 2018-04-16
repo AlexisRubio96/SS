@@ -69,14 +69,14 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="apellido" alignment="0" max="32767" attributes="0"/>
-                      <Component id="correo" alignment="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="pass2" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jpEdad" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jpTalla" alignment="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="jpApellido" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                          <Component id="pass1" min="-2" max="-2" attributes="0"/>
-                          <Component id="userName" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jpPeso" min="-2" max="-2" attributes="0"/>
+                          <Component id="jpSexo" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="nombre" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jpNombre" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                   <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
@@ -88,7 +88,7 @@
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="rol" min="-2" max="-2" attributes="0"/>
+                              <Component id="jpCategoria" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jBguardar" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -110,11 +110,11 @@
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="pass2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jpApellido" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="nombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jpNombre" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLNombre" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
@@ -122,7 +122,7 @@
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="apellido" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jpEdad" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLUserName" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -131,18 +131,18 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLPass1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="userName" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jpSexo" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="pass1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jpPeso" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="correo" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                      <Component id="rol" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jpTalla" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                      <Component id="jpCategoria" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -164,12 +164,16 @@
             <Property name="text" type="java.lang.String" value="Nombre(s):"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="nombre">
+        <Component class="javax.swing.JTextField" name="jpNombre">
           <Properties>
             <Property name="columns" type="int" value="10"/>
           </Properties>
+          <AccessibilityProperties>
+            <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="jpNombre"/>
+            <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value=""/>
+          </AccessibilityProperties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nombreActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jpNombreActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
@@ -180,10 +184,13 @@
             <Property name="text" type="java.lang.String" value="Apellido(s):"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="apellido">
+        <Component class="javax.swing.JTextField" name="jpEdad">
           <Properties>
             <Property name="columns" type="int" value="10"/>
           </Properties>
+          <AccessibilityProperties>
+            <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="jpEdad"/>
+          </AccessibilityProperties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLUserName">
           <Properties>
@@ -193,7 +200,7 @@
             <Property name="text" type="java.lang.String" value="Edad:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="userName">
+        <Component class="javax.swing.JTextField" name="jpSexo">
           <Properties>
             <Property name="columns" type="int" value="10"/>
           </Properties>
@@ -214,15 +221,18 @@
             <Property name="text" type="java.lang.String" value="Peso:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JPasswordField" name="pass1">
+        <Component class="javax.swing.JPasswordField" name="jpPeso">
           <Properties>
             <Property name="columns" type="int" value="10"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JPasswordField" name="pass2">
+        <Component class="javax.swing.JPasswordField" name="jpApellido">
           <Properties>
             <Property name="columns" type="int" value="10"/>
           </Properties>
+          <AccessibilityProperties>
+            <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="jpApellido"/>
+          </AccessibilityProperties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
@@ -232,12 +242,12 @@
             <Property name="text" type="java.lang.String" value="Talla:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="correo">
+        <Component class="javax.swing.JTextField" name="jpTalla">
           <Properties>
             <Property name="columns" type="int" value="15"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="rol">
+        <Component class="javax.swing.JComboBox" name="jpCategoria">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="13" style="0"/>
@@ -255,7 +265,7 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rolActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jpCategoriaActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
@@ -263,7 +273,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Semibold" size="13" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Rol:"/>
+            <Property name="text" type="java.lang.String" value="Categoria:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jBguardar">
