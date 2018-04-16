@@ -7,7 +7,11 @@ package ss;
 
 /**
  *
- * @author Alexis
+ * @author 
+ * Dachely Otero Argote
+ * Ernesto Alejandro Cervantes Villa
+ * Jorge Alexis Rubio Sumano
+ * 
  */
 public class SS {
 
