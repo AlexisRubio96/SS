@@ -13,6 +13,8 @@ package ss;
  * Jorge Alexis Rubio Sumano
  * 
  */
+
+/*dache*/
 public class Alumno extends Registro{
     
     protected Double tallaEdad;
