@@ -59,28 +59,40 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLUserName" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLNombre" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLPass1" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="jpEdad" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jpTalla" alignment="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="jpApellido" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                          <Component id="jpPeso" min="-2" max="-2" attributes="0"/>
-                          <Component id="jpSexo" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLUserName" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLNombre" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLPass1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="jtEdad" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jtTalla" alignment="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="jtApellido" alignment="1" max="32767" attributes="0"/>
+                              <Component id="jtSexo" alignment="1" max="32767" attributes="0"/>
+                              <Component id="jtNombre" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jtPeso" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jpNombre" alignment="0" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                          <Component id="jlRestriccionPT" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                  <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
@@ -88,9 +100,9 @@
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jpCategoria" min="-2" max="-2" attributes="0"/>
+                              <Component id="jcbCategoria" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jBguardar" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jbSiguiente" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jBcancelar" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -110,11 +122,11 @@
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jpApellido" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jtApellido" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jpNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jtNombre" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLNombre" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
@@ -122,7 +134,7 @@
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jpEdad" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jtEdad" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLUserName" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -131,26 +143,36 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLPass1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jpSexo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtSexo" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jpPeso" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jtPeso" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                              <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jpTalla" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                      <Component id="jpCategoria" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jcbCategoria" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtTalla" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jBguardar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jbSiguiente" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jBcancelar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jlRestriccionPT" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="52" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -164,7 +186,7 @@
             <Property name="text" type="java.lang.String" value="Nombre(s):"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jpNombre">
+        <Component class="javax.swing.JTextField" name="jtNombre">
           <Properties>
             <Property name="columns" type="int" value="10"/>
           </Properties>
@@ -173,7 +195,7 @@
             <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value=""/>
           </AccessibilityProperties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jpNombreActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtNombreActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
@@ -184,7 +206,7 @@
             <Property name="text" type="java.lang.String" value="Apellido(s):"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jpEdad">
+        <Component class="javax.swing.JTextField" name="jtEdad">
           <Properties>
             <Property name="columns" type="int" value="10"/>
           </Properties>
@@ -200,7 +222,7 @@
             <Property name="text" type="java.lang.String" value="Edad:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jpSexo">
+        <Component class="javax.swing.JTextField" name="jtSexo">
           <Properties>
             <Property name="columns" type="int" value="10"/>
           </Properties>
@@ -221,12 +243,7 @@
             <Property name="text" type="java.lang.String" value="Peso:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JPasswordField" name="jpPeso">
-          <Properties>
-            <Property name="columns" type="int" value="10"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JPasswordField" name="jpApellido">
+        <Component class="javax.swing.JPasswordField" name="jtApellido">
           <Properties>
             <Property name="columns" type="int" value="10"/>
           </Properties>
@@ -242,12 +259,12 @@
             <Property name="text" type="java.lang.String" value="Talla:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jpTalla">
+        <Component class="javax.swing.JTextField" name="jtTalla">
           <Properties>
             <Property name="columns" type="int" value="15"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jpCategoria">
+        <Component class="javax.swing.JComboBox" name="jcbCategoria">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="13" style="0"/>
@@ -265,7 +282,7 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jpCategoriaActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jcbCategoriaActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
@@ -276,7 +293,7 @@
             <Property name="text" type="java.lang.String" value="Categoria:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jBguardar">
+        <Component class="javax.swing.JButton" name="jbSiguiente">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="66" red="0" type="rgb"/>
@@ -287,10 +304,10 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Guardar"/>
+            <Property name="text" type="java.lang.String" value="Siguiente"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBguardarActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbSiguienteActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jBcancelar">
@@ -315,6 +332,26 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Imagenes/logo_peque&#xf1;o_1.png"/>
             </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jlRestriccionPT">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="**Campos Peso o Talla no validos"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtPeso">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="(Kg)"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="(m)"/>
           </Properties>
         </Component>
       </SubComponents>

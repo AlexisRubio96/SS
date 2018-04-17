@@ -47,7 +47,7 @@
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="jPanel1">
+    <Container class="javax.swing.JPanel" name="jPanelGuardarReg">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -60,17 +60,17 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="jtRangoObesidad" min="-2" max="-2" attributes="0"/>
-                      <Component id="jtTallaEdad" min="-2" max="-2" attributes="0"/>
-                      <Component id="jtIMC" min="-2" max="-2" attributes="0"/>
-                      <Component id="jtEscuela" min="-2" max="-2" attributes="0"/>
+                      <Component id="jlRangoObesidad" min="-2" max="-2" attributes="0"/>
+                      <Component id="jlTallaEdad" min="-2" max="-2" attributes="0"/>
+                      <Component id="jlIMC" min="-2" max="-2" attributes="0"/>
+                      <Component id="jlEscuela" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="jpRangoObesidad" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jpTallaEdad" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jpEscuela" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jpIMC" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jtRangoObesidad" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jtTallaEdad" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtEscuela" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtIMC" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="206" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
@@ -93,29 +93,29 @@
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jlTallaEdad" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jtTallaEdad" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jpTallaEdad" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jpIMC" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jtIMC" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jlIMC" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jpRangoObesidad" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jtRangoObesidad" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jlRangoObesidad" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jlEscuela" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jtEscuela" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jpEscuela" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -128,7 +128,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jtIMC">
+        <Component class="javax.swing.JLabel" name="jlIMC">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Semibold" size="13" style="0"/>
@@ -136,20 +136,19 @@
             <Property name="text" type="java.lang.String" value="IMC:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jpIMC">
+        <Component class="javax.swing.JTextField" name="jtIMC">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
             <Property name="columns" type="int" value="10"/>
           </Properties>
           <AccessibilityProperties>
-            <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="jpNombre"/>
             <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value=""/>
           </AccessibilityProperties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jpIMCActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtIMCActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jtTallaEdad">
+        <Component class="javax.swing.JLabel" name="jlTallaEdad">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Semibold" size="13" style="0"/>
@@ -157,7 +156,7 @@
             <Property name="text" type="java.lang.String" value="Talla/Edad:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jpRangoObesidad">
+        <Component class="javax.swing.JTextField" name="jtRangoObesidad">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
             <Property name="columns" type="int" value="10"/>
@@ -166,7 +165,7 @@
             <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="jpEdad"/>
           </AccessibilityProperties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jtRangoObesidad">
+        <Component class="javax.swing.JLabel" name="jlRangoObesidad">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Semibold" size="13" style="0"/>
@@ -174,12 +173,12 @@
             <Property name="text" type="java.lang.String" value="Rango Obesidad:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jpEscuela">
+        <Component class="javax.swing.JTextField" name="jtEscuela">
           <Properties>
             <Property name="columns" type="int" value="10"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jtEscuela">
+        <Component class="javax.swing.JLabel" name="jlEscuela">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Semibold" size="13" style="0"/>
@@ -187,7 +186,7 @@
             <Property name="text" type="java.lang.String" value="Escuela:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JPasswordField" name="jpTallaEdad">
+        <Component class="javax.swing.JPasswordField" name="jtTallaEdad">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
             <Property name="columns" type="int" value="10"/>

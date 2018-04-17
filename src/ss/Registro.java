@@ -8,21 +8,22 @@ package ss;
  * Jorge Alexis Rubio Sumano
  * 
  */
-public abstract class Registro{
+public /*abstract*/ class Registro{
+    
     
     protected String IDregistro;
     protected String nombre;
     protected String apellido;
     protected String edad;
     protected String sexo;
-    protected String peso;
-    protected String talla;
+    protected Double peso;
+    protected Double talla;
     protected Categoria categoria;
     protected RangoObesidad rangoObesidad;
     protected Double imc;
 
 
-    public Registro(String IDregistro, String nombre , String apellido, String edad, String sexo, String peso, String talla, Categoria categoria, RangoObesidad rangoObesidad) {
+    public Registro(String IDregistro, String nombre , String apellido, String edad, String sexo, Double peso, Double talla, Categoria categoria, RangoObesidad rangoObesidad) {
         this.IDregistro = IDregistro;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -32,7 +33,7 @@ public abstract class Registro{
         this.talla = talla;
         this.categoria = categoria;
         this.rangoObesidad = rangoObesidad;
-        this.imc = Double.parseDouble(peso)/Math.pow(Double.parseDouble(talla), 2);
+        this.imc = peso/Math.pow(talla, 2);
     }
     
     @Override

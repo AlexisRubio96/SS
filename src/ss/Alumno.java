@@ -18,7 +18,7 @@ public class Alumno extends Registro{
     protected Double tallaEdad;
     protected String Escuela;
 
-    public Alumno(String IDregistro, String nombre, String apellido, String edad, String sexo, String peso, String talla, Categoria categoria, RangoObesidad rangoObesidad, String Escuela) {
+    public Alumno(String IDregistro, String nombre, String apellido, String edad, String sexo, Double peso, Double talla, Categoria categoria, RangoObesidad rangoObesidad, String Escuela) {
         super(IDregistro, nombre, apellido, edad, sexo, peso, talla, categoria, rangoObesidad);
         this.Escuela = Escuela;
     }    

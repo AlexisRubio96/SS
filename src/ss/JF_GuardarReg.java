@@ -3,6 +3,7 @@ package ss;
 
 import java.awt.Color;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -17,21 +18,44 @@ import java.util.logging.Logger;
 public class JF_GuardarReg extends javax.swing.JFrame {
     
     //private ListaUsuarios lista;
+    private Registro registro;
     
     /**
      * Creates new form NuevoUsuario
      */
     public JF_GuardarReg() {
         initComponents();
-        this.getContentPane().setBackground(jPanel1.getBackground());
+        this.getContentPane().setBackground(jPanelGuardarReg.getBackground());
         pack();
     }
     
-    /*
-    public JF_GuardarReg(ListaUsuarios lista) throws IOException{
+ 
+    public JF_GuardarReg(Registro registro) throws IOException{
         this();
-        this.lista = lista;
-    }*/
+        this.registro = registro;
+        //Se puede cambiar variables a private y poner gets
+        this.setCampos();   //Llena los campos de IMC y rango Obesidad
+    }
+    
+    private void setCampos() {
+        //Llena el campo de IMC con dos decimales
+        DecimalFormat numberFormat = new DecimalFormat("#.00");
+        jtIMC.setText(String.valueOf(numberFormat.format(registro.imc)));
+        //Cambia el color del campo dependiendo del rango de IMC
+        switch(registro.rangoObesidad){
+            case AMARILLO:
+                jtRangoObesidad.setBackground(Color.yellow);
+                break;
+            case VERDE:
+                jtRangoObesidad.setBackground(Color.green);
+                break;
+            case ROJO:
+                jtRangoObesidad.setBackground(Color.red);
+                break;
+            default:
+                break;
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -42,15 +66,15 @@ public class JF_GuardarReg extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jtIMC = new javax.swing.JLabel();
-        jpIMC = new javax.swing.JTextField();
-        jtTallaEdad = new javax.swing.JLabel();
-        jpRangoObesidad = new javax.swing.JTextField();
-        jtRangoObesidad = new javax.swing.JLabel();
-        jpEscuela = new javax.swing.JTextField();
-        jtEscuela = new javax.swing.JLabel();
-        jpTallaEdad = new javax.swing.JPasswordField();
+        jPanelGuardarReg = new javax.swing.JPanel();
+        jlIMC = new javax.swing.JLabel();
+        jtIMC = new javax.swing.JTextField();
+        jlTallaEdad = new javax.swing.JLabel();
+        jtRangoObesidad = new javax.swing.JTextField();
+        jlRangoObesidad = new javax.swing.JLabel();
+        jtEscuela = new javax.swing.JTextField();
+        jlEscuela = new javax.swing.JLabel();
+        jtTallaEdad = new javax.swing.JPasswordField();
         jbGuardad = new javax.swing.JButton();
         jcCancelar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -64,35 +88,35 @@ public class JF_GuardarReg extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(500, 400));
         getContentPane().setLayout(new java.awt.FlowLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelGuardarReg.setBackground(new java.awt.Color(255, 255, 255));
 
-        jtIMC.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
-        jtIMC.setText("IMC:");
+        jlIMC.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
+        jlIMC.setText("IMC:");
 
-        jpIMC.setEditable(false);
-        jpIMC.setColumns(10);
-        jpIMC.addActionListener(new java.awt.event.ActionListener() {
+        jtIMC.setEditable(false);
+        jtIMC.setColumns(10);
+        jtIMC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jpIMCActionPerformed(evt);
+                jtIMCActionPerformed(evt);
             }
         });
 
-        jtTallaEdad.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
-        jtTallaEdad.setText("Talla/Edad:");
+        jlTallaEdad.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
+        jlTallaEdad.setText("Talla/Edad:");
 
-        jpRangoObesidad.setEditable(false);
-        jpRangoObesidad.setColumns(10);
+        jtRangoObesidad.setEditable(false);
+        jtRangoObesidad.setColumns(10);
 
-        jtRangoObesidad.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
-        jtRangoObesidad.setText("Rango Obesidad:");
+        jlRangoObesidad.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
+        jlRangoObesidad.setText("Rango Obesidad:");
 
-        jpEscuela.setColumns(10);
+        jtEscuela.setColumns(10);
 
-        jtEscuela.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
-        jtEscuela.setText("Escuela:");
+        jlEscuela.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
+        jlEscuela.setText("Escuela:");
 
-        jpTallaEdad.setEditable(false);
-        jpTallaEdad.setColumns(10);
+        jtTallaEdad.setEditable(false);
+        jtTallaEdad.setColumns(10);
 
         jbGuardad.setBackground(new java.awt.Color(0, 102, 102));
         jbGuardad.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
@@ -116,70 +140,69 @@ public class JF_GuardarReg extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/logo_pequeño_1.png"))); // NOI18N
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelGuardarRegLayout = new javax.swing.GroupLayout(jPanelGuardarReg);
+        jPanelGuardarReg.setLayout(jPanelGuardarRegLayout);
+        jPanelGuardarRegLayout.setHorizontalGroup(
+            jPanelGuardarRegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelGuardarRegLayout.createSequentialGroup()
                 .addGap(43, 43, 43)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jtRangoObesidad)
-                    .addComponent(jtTallaEdad)
-                    .addComponent(jtIMC)
-                    .addComponent(jtEscuela))
+                .addGroup(jPanelGuardarRegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jlRangoObesidad)
+                    .addComponent(jlTallaEdad)
+                    .addComponent(jlIMC)
+                    .addComponent(jlEscuela))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jpRangoObesidad, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jpTallaEdad, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jpEscuela, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jpIMC, javax.swing.GroupLayout.Alignment.LEADING))
+                .addGroup(jPanelGuardarRegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jtRangoObesidad, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jtTallaEdad, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtEscuela, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtIMC, javax.swing.GroupLayout.Alignment.LEADING))
                 .addGap(206, 206, 206)
                 .addComponent(jLabel1)
                 .addGap(52, 52, 52))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelGuardarRegLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jbGuardad)
                 .addGap(18, 18, 18)
                 .addComponent(jcCancelar)
                 .addGap(33, 33, 33))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        jPanelGuardarRegLayout.setVerticalGroup(
+            jPanelGuardarRegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelGuardarRegLayout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jtTallaEdad)
-                                .addComponent(jpTallaEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jpIMC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jtIMC))
+                .addGroup(jPanelGuardarRegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanelGuardarRegLayout.createSequentialGroup()
+                        .addGroup(jPanelGuardarRegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanelGuardarRegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jlTallaEdad)
+                                .addComponent(jtTallaEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanelGuardarRegLayout.createSequentialGroup()
+                                .addGroup(jPanelGuardarRegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jtIMC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jlIMC))
                                 .addGap(35, 35, 35)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jpRangoObesidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtRangoObesidad)))
+                        .addGroup(jPanelGuardarRegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jtRangoObesidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jlRangoObesidad)))
                     .addComponent(jLabel1))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtEscuela)
-                    .addComponent(jpEscuela, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanelGuardarRegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlEscuela)
+                    .addComponent(jtEscuela, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanelGuardarRegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbGuardad)
                     .addComponent(jcCancelar))
                 .addContainerGap(137, Short.MAX_VALUE))
         );
 
-        jpIMC.getAccessibleContext().setAccessibleName("jpNombre");
-        jpIMC.getAccessibleContext().setAccessibleDescription("");
-        jpRangoObesidad.getAccessibleContext().setAccessibleName("jpEdad");
-        jpTallaEdad.getAccessibleContext().setAccessibleName("jpApellido");
+        jtIMC.getAccessibleContext().setAccessibleDescription("");
+        jtRangoObesidad.getAccessibleContext().setAccessibleName("jpEdad");
+        jtTallaEdad.getAccessibleContext().setAccessibleName("jpApellido");
 
-        getContentPane().add(jPanel1);
+        getContentPane().add(jPanelGuardarReg);
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -192,9 +215,9 @@ public class JF_GuardarReg extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jpIMCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jpIMCActionPerformed
+    private void jtIMCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtIMCActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jpIMCActionPerformed
+    }//GEN-LAST:event_jtIMCActionPerformed
 
     private void jbGuardadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardadActionPerformed
 
@@ -245,16 +268,18 @@ public class JF_GuardarReg extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanelGuardarReg;
     private javax.swing.JButton jbGuardad;
     private javax.swing.JButton jcCancelar;
-    private javax.swing.JTextField jpEscuela;
-    private javax.swing.JTextField jpIMC;
-    private javax.swing.JTextField jpRangoObesidad;
-    private javax.swing.JPasswordField jpTallaEdad;
-    private javax.swing.JLabel jtEscuela;
-    private javax.swing.JLabel jtIMC;
-    private javax.swing.JLabel jtRangoObesidad;
-    private javax.swing.JLabel jtTallaEdad;
+    private javax.swing.JLabel jlEscuela;
+    private javax.swing.JLabel jlIMC;
+    private javax.swing.JLabel jlRangoObesidad;
+    private javax.swing.JLabel jlTallaEdad;
+    private javax.swing.JTextField jtEscuela;
+    private javax.swing.JTextField jtIMC;
+    private javax.swing.JTextField jtRangoObesidad;
+    private javax.swing.JPasswordField jtTallaEdad;
     // End of variables declaration//GEN-END:variables
+
+
 }

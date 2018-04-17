@@ -17,6 +17,10 @@ import java.util.logging.Logger;
 public class JF_NuevoReg extends javax.swing.JFrame {
     
     //private ListaUsuarios lista;
+    private JF_GuardarReg guardarReg;
+    private double talla;
+    private double peso;
+    
     
     /**
      * Creates new form NuevoUsuario
@@ -24,11 +28,12 @@ public class JF_NuevoReg extends javax.swing.JFrame {
     public JF_NuevoReg() {
         initComponents();
         this.getContentPane().setBackground(jPanel1.getBackground());
+        jlRestriccionPT.setVisible(false);
         pack();
     }
     
     /*
-    public NuevoReg(ListaUsuarios lista) throws IOException{
+    public JF_NuevoReg(ListaUsuarios lista) throws IOException{
         this();
         this.lista = lista;
     }*/
@@ -44,22 +49,25 @@ public class JF_NuevoReg extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLNombre = new javax.swing.JLabel();
-        jpNombre = new javax.swing.JTextField();
+        jtNombre = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jpEdad = new javax.swing.JTextField();
+        jtEdad = new javax.swing.JTextField();
         jLUserName = new javax.swing.JLabel();
-        jpSexo = new javax.swing.JTextField();
+        jtSexo = new javax.swing.JTextField();
         jLPass1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jpPeso = new javax.swing.JPasswordField();
-        jpApellido = new javax.swing.JPasswordField();
+        jtApellido = new javax.swing.JPasswordField();
         jLabel6 = new javax.swing.JLabel();
-        jpTalla = new javax.swing.JTextField();
-        jpCategoria = new javax.swing.JComboBox();
+        jtTalla = new javax.swing.JTextField();
+        jcbCategoria = new javax.swing.JComboBox();
         jLabel8 = new javax.swing.JLabel();
-        jBguardar = new javax.swing.JButton();
+        jbSiguiente = new javax.swing.JButton();
         jBcancelar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jlRestriccionPT = new javax.swing.JLabel();
+        jtPeso = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -75,22 +83,22 @@ public class JF_NuevoReg extends javax.swing.JFrame {
         jLNombre.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         jLNombre.setText("Nombre(s):");
 
-        jpNombre.setColumns(10);
-        jpNombre.addActionListener(new java.awt.event.ActionListener() {
+        jtNombre.setColumns(10);
+        jtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jpNombreActionPerformed(evt);
+                jtNombreActionPerformed(evt);
             }
         });
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         jLabel2.setText("Apellido(s):");
 
-        jpEdad.setColumns(10);
+        jtEdad.setColumns(10);
 
         jLUserName.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         jLUserName.setText("Edad:");
 
-        jpSexo.setColumns(10);
+        jtSexo.setColumns(10);
 
         jLPass1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         jLPass1.setText("Sexo:");
@@ -98,34 +106,32 @@ public class JF_NuevoReg extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         jLabel5.setText("Peso:");
 
-        jpPeso.setColumns(10);
-
-        jpApellido.setColumns(10);
+        jtApellido.setColumns(10);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         jLabel6.setText("Talla:");
 
-        jpTalla.setColumns(15);
+        jtTalla.setColumns(15);
 
-        jpCategoria.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        jpCategoria.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Alumno", "Maestro", "Jefe De Familia", "Preparadores de Comida", "Directivo", "Voluntario" }));
-        jpCategoria.setToolTipText("");
-        jpCategoria.addActionListener(new java.awt.event.ActionListener() {
+        jcbCategoria.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jcbCategoria.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Alumno", "Maestro", "Jefe De Familia", "Preparadores de Comida", "Directivo", "Voluntario" }));
+        jcbCategoria.setToolTipText("");
+        jcbCategoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jpCategoriaActionPerformed(evt);
+                jcbCategoriaActionPerformed(evt);
             }
         });
 
         jLabel8.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         jLabel8.setText("Categoria:");
 
-        jBguardar.setBackground(new java.awt.Color(0, 102, 102));
-        jBguardar.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
-        jBguardar.setForeground(new java.awt.Color(255, 255, 255));
-        jBguardar.setText("Guardar");
-        jBguardar.addActionListener(new java.awt.event.ActionListener() {
+        jbSiguiente.setBackground(new java.awt.Color(0, 102, 102));
+        jbSiguiente.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
+        jbSiguiente.setForeground(new java.awt.Color(255, 255, 255));
+        jbSiguiente.setText("Siguiente");
+        jbSiguiente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBguardarActionPerformed(evt);
+                jbSiguienteActionPerformed(evt);
             }
         });
 
@@ -141,40 +147,56 @@ public class JF_NuevoReg extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/logo_pequeño_1.png"))); // NOI18N
 
+        jlRestriccionPT.setForeground(new java.awt.Color(255, 51, 51));
+        jlRestriccionPT.setText("**Campos Peso o Talla no validos");
+
+        jLabel3.setText("(Kg)");
+
+        jLabel4.setText("(m)");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(43, 43, 43)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel5)
-                    .addComponent(jLUserName)
-                    .addComponent(jLabel2)
-                    .addComponent(jLNombre)
-                    .addComponent(jLPass1)
-                    .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jpEdad, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jpTalla, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
-                    .addComponent(jpApellido, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jpPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jpSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jpNombre, javax.swing.GroupLayout.Alignment.LEADING))
-                .addGap(56, 56, 56)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel5)
+                            .addComponent(jLUserName)
+                            .addComponent(jLabel2)
+                            .addComponent(jLNombre)
+                            .addComponent(jLPass1)
+                            .addComponent(jLabel6))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jtEdad, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jtTalla, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(jtApellido)
+                            .addComponent(jtSexo)
+                            .addComponent(jtNombre, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jtPeso))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4))
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(jlRestriccionPT)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(52, 52, 52))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jpCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jcbCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jBguardar)
+                                .addComponent(jbSiguiente)
                                 .addGap(18, 18, 18)
                                 .addComponent(jBcancelar)))
                         .addGap(21, 21, 21))))
@@ -188,42 +210,49 @@ public class JF_NuevoReg extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel2)
-                                .addComponent(jpApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jpNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLNombre))
                                 .addGap(35, 35, 35)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jpEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLUserName)))
                     .addComponent(jLabel1))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLPass1)
-                    .addComponent(jpSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jpPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabel5))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jtPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3))))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jpTalla, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jpCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
+                    .addComponent(jcbCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8)
+                    .addComponent(jtTalla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBguardar)
-                    .addComponent(jBcancelar))
-                .addContainerGap(52, Short.MAX_VALUE))
+                    .addComponent(jbSiguiente)
+                    .addComponent(jBcancelar)
+                    .addComponent(jlRestriccionPT))
+                .addGap(52, 52, 52))
         );
 
-        jpNombre.getAccessibleContext().setAccessibleName("jpNombre");
-        jpNombre.getAccessibleContext().setAccessibleDescription("");
-        jpEdad.getAccessibleContext().setAccessibleName("jpEdad");
-        jpApellido.getAccessibleContext().setAccessibleName("jpApellido");
+        jtNombre.getAccessibleContext().setAccessibleName("jpNombre");
+        jtNombre.getAccessibleContext().setAccessibleDescription("");
+        jtEdad.getAccessibleContext().setAccessibleName("jpEdad");
+        jtApellido.getAccessibleContext().setAccessibleName("jpApellido");
 
         getContentPane().add(jPanel1);
 
@@ -238,21 +267,46 @@ public class JF_NuevoReg extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jpNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jpNombreActionPerformed
+    private void jtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtNombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jpNombreActionPerformed
+    }//GEN-LAST:event_jtNombreActionPerformed
 
-    private void jBguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBguardarActionPerformed
+    private void jbSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSiguienteActionPerformed
+        
+        //Implementar try catch para restringir double
+        try{
+            peso = Double.parseDouble(jtPeso.getText());
+            talla = Double.parseDouble(jtTalla.getText());
+            Registro registro = new Registro("1", jtNombre.getText(), jtApellido.getText(), jtEdad.getText(), jtSexo.getText(), peso, talla, Categoria.ALUMNO, RangoObesidad.AMARILLO);
+            if(guardarReg == null){
+                try {
+                    guardarReg = new JF_GuardarReg(registro);
+                } catch (IOException ex) {
+                    Logger.getLogger(JF_NuevoReg.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }else{
+                guardarReg = null;        //Vuelve null el objeto anterior
+                try {
+                    guardarReg = new JF_GuardarReg(registro);
+                } catch (IOException ex) {
+                    Logger.getLogger(JF_NuevoReg.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            guardarReg.setVisible(true);
+        }catch(NumberFormatException nFE){
+            jlRestriccionPT.setVisible(true);
+        }
+        
 
-    }//GEN-LAST:event_jBguardarActionPerformed
+    }//GEN-LAST:event_jbSiguienteActionPerformed
 
     private void jBcancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBcancelarActionPerformed
             this.setVisible(false);
     }//GEN-LAST:event_jBcancelarActionPerformed
 
-    private void jpCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jpCategoriaActionPerformed
+    private void jcbCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbCategoriaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jpCategoriaActionPerformed
+    }//GEN-LAST:event_jcbCategoriaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -292,12 +346,13 @@ public class JF_NuevoReg extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBcancelar;
-    private javax.swing.JButton jBguardar;
     private javax.swing.JLabel jLNombre;
     private javax.swing.JLabel jLPass1;
     private javax.swing.JLabel jLUserName;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
@@ -305,12 +360,14 @@ public class JF_NuevoReg extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jpApellido;
-    private javax.swing.JComboBox jpCategoria;
-    private javax.swing.JTextField jpEdad;
-    private javax.swing.JTextField jpNombre;
-    private javax.swing.JPasswordField jpPeso;
-    private javax.swing.JTextField jpSexo;
-    private javax.swing.JTextField jpTalla;
+    private javax.swing.JButton jbSiguiente;
+    private javax.swing.JComboBox jcbCategoria;
+    private javax.swing.JLabel jlRestriccionPT;
+    private javax.swing.JPasswordField jtApellido;
+    private javax.swing.JTextField jtEdad;
+    private javax.swing.JTextField jtNombre;
+    private javax.swing.JTextField jtPeso;
+    private javax.swing.JTextField jtSexo;
+    private javax.swing.JTextField jtTalla;
     // End of variables declaration//GEN-END:variables
 }
