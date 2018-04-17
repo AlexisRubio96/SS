@@ -20,6 +20,7 @@ public class JF_NuevoReg extends javax.swing.JFrame {
     private JF_GuardarReg guardarReg;
     private double talla;
     private double peso;
+    private RangoObesidad rangoObesidad;
     
     
     /**
@@ -277,7 +278,7 @@ public class JF_NuevoReg extends javax.swing.JFrame {
         try{
             peso = Double.parseDouble(jtPeso.getText());
             talla = Double.parseDouble(jtTalla.getText());
-            Registro registro = new Registro("1", jtNombre.getText(), jtApellido.getText(), jtEdad.getText(), jtSexo.getText(), peso, talla, Categoria.ALUMNO, RangoObesidad.AMARILLO);
+            Registro registro = new Registro("1", jtNombre.getText(), jtApellido.getText(), jtEdad.getText(), jtSexo.getText(), peso, talla, Categoria.ALUMNO);
             if(guardarReg == null){
                 try {
                     guardarReg = new JF_GuardarReg(registro);
@@ -300,8 +301,10 @@ public class JF_NuevoReg extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jbSiguienteActionPerformed
 
+    
     private void jBcancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBcancelarActionPerformed
             this.setVisible(false);
+            
     }//GEN-LAST:event_jBcancelarActionPerformed
 
     private void jcbCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbCategoriaActionPerformed
