@@ -1,0 +1,2 @@
+1,ofo,dhd,4,g,5.0,1.5,ALUMNO
+1,dache,otero,23,f,52.0,1.68,ALUMNO

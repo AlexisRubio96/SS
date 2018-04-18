@@ -2,7 +2,9 @@ package ss;
 
 
 import java.awt.Color;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.DecimalFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,6 +21,7 @@ public class JF_GuardarReg extends javax.swing.JFrame {
     
     //private ListaUsuarios lista;
     private Registro registro;
+    private Principal principal = new Principal();
     
     /**
      * Creates new form NuevoUsuario
@@ -220,7 +223,9 @@ public class JF_GuardarReg extends javax.swing.JFrame {
     }//GEN-LAST:event_jtIMCActionPerformed
 
     private void jbGuardadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardadActionPerformed
-
+        
+        principal.getRegistros().add(this.registro);
+        actualizarArchivoRegistros(this.registro);
     }//GEN-LAST:event_jbGuardadActionPerformed
 
     private void jcCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcCancelarActionPerformed
@@ -281,5 +286,23 @@ public class JF_GuardarReg extends javax.swing.JFrame {
     private javax.swing.JPasswordField jtTallaEdad;
     // End of variables declaration//GEN-END:variables
 
+    public void actualizarArchivoRegistros(Registro r) {
+        FileWriter archivoSal; 
+        
+        try {
+            archivoSal = new FileWriter("src/registros.txt", true);
+            PrintWriter salida= new PrintWriter(archivoSal);            
+            salida.println(r.getIDregistro()+","+ (r.getNombre())+","+ (r.getApellido()) +","+
+                    r.getEdad()+","+ (r.getSexo())+","+ (r.getPeso()) +","+
+                    r.getTalla()+","+ (r.getCategoria()));
+
+            salida.close();
+        } catch (Exception e) {
+            
+        }
+        }
+        /*catch (IOException ex) {
+            Logger.getLogger(Registrar.class.getName()).log(Level.SEVERE, null, ex);
+        }*/
 
 }

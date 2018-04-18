@@ -73,10 +73,10 @@
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="jtEdad" alignment="0" max="32767" attributes="0"/>
                               <Component id="jtTalla" alignment="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="jtApellido" alignment="1" max="32767" attributes="0"/>
                               <Component id="jtSexo" alignment="1" max="32767" attributes="0"/>
                               <Component id="jtNombre" alignment="0" max="32767" attributes="0"/>
                               <Component id="jtPeso" max="32767" attributes="0"/>
+                              <Component id="jtApellido" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -119,20 +119,19 @@
                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jtApellido" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jtNombre" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLNombre" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                              </Group>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jtNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLNombre" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Component id="jtApellido" alignment="1" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jtEdad" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLUserName" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -159,12 +158,14 @@
                       </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jcbCategoria" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jtTalla" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jcbCategoria" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -242,14 +243,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Peso:"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JPasswordField" name="jtApellido">
-          <Properties>
-            <Property name="columns" type="int" value="10"/>
-          </Properties>
-          <AccessibilityProperties>
-            <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="jpApellido"/>
-          </AccessibilityProperties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
@@ -353,6 +346,11 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="(m)"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtApellido">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtApellidoActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

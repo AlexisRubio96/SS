@@ -52,4 +52,86 @@ public /*abstract*/ class Registro{
         return IDregistro + "," + nombre + "," + apellido + "," + edad + ","+ sexo + "," + peso + "," + talla + "," + categoria + "," + rangoObesidad + "," + imc;
     }    
 
+    public String getIDregistro() {
+        return IDregistro;
+    }
+
+    public void setIDregistro(String IDregistro) {
+        this.IDregistro = IDregistro;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getEdad() {
+        return edad;
+    }
+
+    public void setEdad(String edad) {
+        this.edad = edad;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    public Double getPeso() {
+        return peso;
+    }
+
+    public void setPeso(Double peso) {
+        this.peso = peso;
+    }
+
+    public Double getTalla() {
+        return talla;
+    }
+
+    public void setTalla(Double talla) {
+        this.talla = talla;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
+    public RangoObesidad getRangoObesidad() {
+        return rangoObesidad;
+    }
+
+    public void setRangoObesidad(RangoObesidad rangoObesidad) {
+        this.rangoObesidad = rangoObesidad;
+    }
+
+    public Double getImc() {
+        return imc;
+    }
+
+    public void setImc(Double imc) {
+        this.imc = imc;
+    }
+    
+    
+
 }
