@@ -304,6 +304,7 @@ public class JF_NuevoReg extends javax.swing.JFrame {
                 }
             }
             guardarReg.setVisible(true);
+            this.setVisible(false);
         }catch(NumberFormatException nFE){
             jlRestriccionPT.setVisible(true);
         }

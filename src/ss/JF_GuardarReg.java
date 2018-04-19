@@ -22,6 +22,8 @@ public class JF_GuardarReg extends javax.swing.JFrame {
     //private ListaUsuarios lista;
     private Registro registro;
     private Principal principal = new Principal();
+    private JF_Aceptado acepReg;
+    
     
     /**
      * Creates new form NuevoUsuario
@@ -38,6 +40,7 @@ public class JF_GuardarReg extends javax.swing.JFrame {
         this.registro = registro;
         //Se puede cambiar variables a private y poner gets
         this.setCampos();   //Llena los campos de IMC y rango Obesidad
+        this.acepReg = new JF_Aceptado();
     }
     
     private void setCampos() {
@@ -226,6 +229,8 @@ public class JF_GuardarReg extends javax.swing.JFrame {
         
         principal.getRegistros().add(this.registro);
         actualizarArchivoRegistros(this.registro);
+        acepReg.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jbGuardadActionPerformed
 
     private void jcCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcCancelarActionPerformed
