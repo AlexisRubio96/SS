@@ -14,7 +14,7 @@ package ss;
  * 
  */
 
-/*dache*/
+/*dacheeeee*/
 public class Alumno extends Registro{
     
     protected double tallaEdad;
