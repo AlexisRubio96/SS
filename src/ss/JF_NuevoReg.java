@@ -20,6 +20,7 @@ public class JF_NuevoReg extends javax.swing.JFrame {
     
     //private ListaUsuarios lista;
     private JF_GuardarReg guardarReg;
+    private JF_MenuInicial menuInicial;
     private double talla;
     private double peso;
     private RangoObesidad rangoObesidad;
@@ -36,6 +37,13 @@ public class JF_NuevoReg extends javax.swing.JFrame {
         jlRestriccionPT.setVisible(false);
         pack();
     }
+    
+    public JF_NuevoReg(JF_MenuInicial menuInicial) {
+        this();
+        this.menuInicial = menuInicial;
+    }
+    
+    
     
     /*
     public JF_NuevoReg(ListaUsuarios lista) throws IOException{
@@ -313,7 +321,8 @@ public class JF_NuevoReg extends javax.swing.JFrame {
     
     private void jBcancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBcancelarActionPerformed
             this.setVisible(false);
-            System.exit(0);
+            this.menuInicial.setVisible(true);
+            //System.exit(0);
             
     }//GEN-LAST:event_jBcancelarActionPerformed
 

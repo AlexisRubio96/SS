@@ -24,9 +24,9 @@ public class JF_MenuInicial extends javax.swing.JFrame {
     public JF_MenuInicial() throws IOException{
         initComponents();
         this.getContentPane().setBackground(panelPrinicpal.getBackground());
-        pack();
-        
-        this.nuevoReg = new JF_NuevoReg();
+        pack();        
+        this.nuevoReg = new JF_NuevoReg(this);
+        System.out.println("HOOOLA");
     }
 
     /**
@@ -40,7 +40,6 @@ public class JF_MenuInicial extends javax.swing.JFrame {
 
         panelPrinicpal = new javax.swing.JPanel();
         jbVerRegistros = new javax.swing.JButton();
-        logo = new javax.swing.JLabel();
         jLPassWrong = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jlLogoGrande = new javax.swing.JLabel();
@@ -62,8 +61,6 @@ public class JF_MenuInicial extends javax.swing.JFrame {
                 jbVerRegistrosActionPerformed(evt);
             }
         });
-
-        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logo1.png"))); // NOI18N
 
         jLPassWrong.setForeground(new java.awt.Color(255, 51, 51));
 
@@ -93,9 +90,7 @@ public class JF_MenuInicial extends javax.swing.JFrame {
                         .addComponent(jlLogoGrande))
                     .addGroup(panelPrinicpalLayout.createSequentialGroup()
                         .addGap(217, 217, 217)
-                        .addGroup(panelPrinicpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(logo, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLPassWrong, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(jLPassWrong, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrinicpalLayout.createSequentialGroup()
                 .addGap(0, 143, Short.MAX_VALUE)
@@ -107,11 +102,7 @@ public class JF_MenuInicial extends javax.swing.JFrame {
         panelPrinicpalLayout.setVerticalGroup(
             panelPrinicpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelPrinicpalLayout.createSequentialGroup()
-                .addGroup(panelPrinicpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelPrinicpalLayout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(logo))
-                    .addComponent(jlLogoGrande))
+                .addComponent(jlLogoGrande)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
                 .addGap(33, 33, 33)
@@ -183,7 +174,6 @@ public class JF_MenuInicial extends javax.swing.JFrame {
     private javax.swing.JButton jbAgregarRegistro;
     private javax.swing.JButton jbVerRegistros;
     private javax.swing.JLabel jlLogoGrande;
-    private javax.swing.JLabel logo;
     private javax.swing.JPanel panelPrinicpal;
     // End of variables declaration//GEN-END:variables
 }
