@@ -11,7 +11,7 @@ package ss;
 public /*abstract*/ class Registro{
     
     
-    protected String IDregistro;
+    protected int IDregistro;
     protected String nombre;
     protected String apellido;
     protected String edad;
@@ -23,7 +23,7 @@ public /*abstract*/ class Registro{
     protected Double imc;
 
 
-    public Registro(String IDregistro, String nombre , String apellido, String edad, String sexo, Double peso, Double talla, Categoria categoria) {
+    public Registro(int IDregistro, String nombre , String apellido, String edad, String sexo, Double peso, Double talla, Categoria categoria) {
         this.IDregistro = IDregistro;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -52,11 +52,11 @@ public /*abstract*/ class Registro{
         return IDregistro + "," + nombre + "," + apellido + "," + edad + ","+ sexo + "," + peso + "," + talla + "," + categoria + "," + rangoObesidad + "," + imc;
     }    
 
-    public String getIDregistro() {
+    public int getIDregistro() {
         return IDregistro;
     }
 
-    public void setIDregistro(String IDregistro) {
+    public void setIDregistro(int IDregistro) {
         this.IDregistro = IDregistro;
     }
 

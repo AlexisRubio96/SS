@@ -64,7 +64,7 @@ public class Principal {
                         categoria = Categoria.VOLUNTARIO;
                     }
                     
-                    reg= new Registro(datos[0],datos[1],datos[2], datos[3],datos[4], Double.parseDouble(datos[5]), Double.parseDouble(datos[6]), Categoria.ALUMNO );
+                    reg= new Registro(Integer.parseInt(datos[0]),datos[1],datos[2], datos[3],datos[4], Double.parseDouble(datos[5]), Double.parseDouble(datos[6]), Categoria.ALUMNO );
                 } catch (Exception e) {
                 }
                         

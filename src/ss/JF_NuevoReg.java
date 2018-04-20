@@ -288,7 +288,7 @@ public class JF_NuevoReg extends javax.swing.JFrame {
             peso = Double.parseDouble(jtPeso.getText());
             talla = Double.parseDouble(jtTalla.getText());
             
-            Registro registro = new Registro("1", jtNombre.getText(), jtApellido.getText(), jtEdad.getText(), jtSexo.getText(), peso, talla, Categoria.ALUMNO);
+            Registro registro = new Registro(1, jtNombre.getText(), jtApellido.getText(), jtEdad.getText(), jtSexo.getText(), peso, talla, Categoria.ALUMNO);
             if(guardarReg == null){
                 try {
                     guardarReg = new JF_GuardarReg(registro);
@@ -313,6 +313,7 @@ public class JF_NuevoReg extends javax.swing.JFrame {
     
     private void jBcancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBcancelarActionPerformed
             this.setVisible(false);
+            System.exit(0);
             
     }//GEN-LAST:event_jBcancelarActionPerformed
 

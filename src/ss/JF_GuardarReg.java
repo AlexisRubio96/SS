@@ -23,6 +23,7 @@ public class JF_GuardarReg extends javax.swing.JFrame {
     private Registro registro;
     private Principal principal = new Principal();
     private JF_Aceptado acepReg;
+    private JF_NuevoReg nuevoRegistro;
     
     
     /**
@@ -31,6 +32,7 @@ public class JF_GuardarReg extends javax.swing.JFrame {
     public JF_GuardarReg() {
         initComponents();
         this.getContentPane().setBackground(jPanelGuardarReg.getBackground());
+        nuevoRegistro = new JF_NuevoReg();
         pack();
     }
     
@@ -228,6 +230,7 @@ public class JF_GuardarReg extends javax.swing.JFrame {
     private void jbGuardadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardadActionPerformed
         
         principal.getRegistros().add(this.registro);
+        registro.setIDregistro(principal.getRegistros().size());
         actualizarArchivoRegistros(this.registro);
         acepReg.setVisible(true);
         this.setVisible(false);
@@ -235,6 +238,7 @@ public class JF_GuardarReg extends javax.swing.JFrame {
 
     private void jcCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcCancelarActionPerformed
             this.setVisible(false);
+            nuevoRegistro.setVisible(true);
     }//GEN-LAST:event_jcCancelarActionPerformed
 
     /**
