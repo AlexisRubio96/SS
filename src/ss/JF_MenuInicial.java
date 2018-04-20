@@ -15,7 +15,8 @@ import java.util.logging.Logger;
  */
 public class JF_MenuInicial extends javax.swing.JFrame {
     
-
+    
+    private JF_NuevoReg nuevoReg;
     /**
      * Creates new form logIn
      * @throws java.io.IOException
@@ -24,6 +25,8 @@ public class JF_MenuInicial extends javax.swing.JFrame {
         initComponents();
         this.getContentPane().setBackground(panelPrinicpal.getBackground());
         pack();
+        
+        this.nuevoReg = new JF_NuevoReg();
     }
 
     /**
@@ -130,7 +133,8 @@ public class JF_MenuInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_jbVerRegistrosActionPerformed
 
     private void jbAgregarRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAgregarRegistroActionPerformed
-        // TODO add your handling code here:
+        nuevoReg.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jbAgregarRegistroActionPerformed
 
     /**
