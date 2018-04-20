@@ -1,6 +1,0 @@
-1,ofo,dhd,4,g,5.0,1.5,ALUMNO
-1,dache,otero,23,f,52.0,1.68,ALUMNO
-1,Oscar,Gutierrez,21,M,71.0,1.75,ALUMNO
-1,pruba,dos,14,F,54.0,23.0,ALUMNO
-1,prueba,lala,23,F,45.0,6.0,ALUMNO
-1,prueba3,lalalala,45,M,25.0,3.0,ALUMNO

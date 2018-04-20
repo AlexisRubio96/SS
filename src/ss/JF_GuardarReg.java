@@ -228,7 +228,6 @@ public class JF_GuardarReg extends javax.swing.JFrame {
     }//GEN-LAST:event_jtIMCActionPerformed
 
     private void jbGuardadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardadActionPerformed
-        
         principal.getRegistros().add(this.registro);
         registro.setIDregistro(principal.getRegistros().size());
         actualizarArchivoRegistros(this.registro);
