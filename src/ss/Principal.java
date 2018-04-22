@@ -26,6 +26,7 @@ public class Principal {
     }
     
     public ArrayList<Registro> getRegistros() {
+        System.out.println(regis.get(0));
         return regis;
     }
     
@@ -41,7 +42,7 @@ public class Principal {
             BufferedReader entrada= new BufferedReader(archivo);        
             while(entrada.ready()){
                 String linea= entrada.readLine();
-                String[] datos= linea.split(" ");
+                String[] datos= linea.split(",");
                 
                 try {
                     
@@ -66,12 +67,13 @@ public class Principal {
                     
                     reg= new Registro(Integer.parseInt(datos[0]),datos[1],datos[2], datos[3],datos[4], Double.parseDouble(datos[5]), Double.parseDouble(datos[6]), Categoria.ALUMNO );
                 } catch (Exception e) {
+                    System.err.println(e);
                 }
                         
-                regis.add(reg);
-                    
+                regis.add(reg);                  
             }
             entrada.close();
+            System.out.println("Se lleno regis");
         } catch (IOException e) {
         }
 

@@ -21,7 +21,7 @@ public class JF_GuardarReg extends javax.swing.JFrame {
     
     //private ListaUsuarios lista;
     private Registro registro;
-    private Principal principal = new Principal();
+    private Principal principal;
     private JF_Aceptado acepReg;
     private JF_NuevoReg nuevoRegistro;
     
@@ -32,17 +32,17 @@ public class JF_GuardarReg extends javax.swing.JFrame {
     public JF_GuardarReg() {
         initComponents();
         this.getContentPane().setBackground(jPanelGuardarReg.getBackground());
-        nuevoRegistro = new JF_NuevoReg();
         pack();
     }
     
  
-    public JF_GuardarReg(Registro registro) throws IOException{
+    public JF_GuardarReg(Principal principal, Registro registro, JF_NuevoReg nuevoReg) throws IOException{
         this();
+        this.principal = principal;
         this.registro = registro;
+        this.nuevoRegistro = nuevoReg;
         //Se puede cambiar variables a private y poner gets
         this.setCampos();   //Llena los campos de IMC y rango Obesidad
-        this.acepReg = new JF_Aceptado();
     }
     
     private void setCampos() {
@@ -228,9 +228,15 @@ public class JF_GuardarReg extends javax.swing.JFrame {
     }//GEN-LAST:event_jtIMCActionPerformed
 
     private void jbGuardadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardadActionPerformed
+        if(principal == null){
+            System.out.println("ES NULL");
+        }else{
+            System.out.println("No es Null");
+        }
         principal.getRegistros().add(this.registro);
         registro.setIDregistro(principal.getRegistros().size());
         actualizarArchivoRegistros(this.registro);
+        this.acepReg = new JF_Aceptado(nuevoRegistro);
         acepReg.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jbGuardadActionPerformed

@@ -38,18 +38,13 @@ public class JF_NuevoReg extends javax.swing.JFrame {
         pack();
     }
     
-    public JF_NuevoReg(JF_MenuInicial menuInicial) {
+    public JF_NuevoReg(JF_MenuInicial menuInicial, Principal principal) {
         this();
+        this.principal = principal;
         this.menuInicial = menuInicial;
     }
     
-    
-    
-    /*
-    public JF_NuevoReg(ListaUsuarios lista) throws IOException{
-        this();
-        this.lista = lista;
-    }*/
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -299,14 +294,14 @@ public class JF_NuevoReg extends javax.swing.JFrame {
             Registro registro = new Registro(1, jtNombre.getText(), jtApellido.getText(), jtEdad.getText(), jtSexo.getText(), peso, talla, Categoria.ALUMNO);
             if(guardarReg == null){
                 try {
-                    guardarReg = new JF_GuardarReg(registro);
+                    guardarReg = new JF_GuardarReg(principal, registro, this);
                 } catch (IOException ex) {
                     Logger.getLogger(JF_NuevoReg.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }else{
-                guardarReg = null;        //Vuelve null el objeto anterior
+                guardarReg.dispose();        //Vuelve null el objeto anterior
                 try {
-                    guardarReg = new JF_GuardarReg(registro);
+                    guardarReg = new JF_GuardarReg(principal, registro, this);
                 } catch (IOException ex) {
                     Logger.getLogger(JF_NuevoReg.class.getName()).log(Level.SEVERE, null, ex);
                 }

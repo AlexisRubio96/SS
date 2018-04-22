@@ -18,9 +18,12 @@ public class JF_Aceptado extends javax.swing.JFrame {
      */
     public JF_Aceptado() {
         initComponents();
-        this.nuevoReg = new JF_NuevoReg();
     }
 
+    public JF_Aceptado(JF_NuevoReg nuevoReg) {
+        this();
+        this.nuevoReg = nuevoReg;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

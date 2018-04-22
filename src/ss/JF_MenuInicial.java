@@ -17,15 +17,17 @@ public class JF_MenuInicial extends javax.swing.JFrame {
     
     
     private JF_NuevoReg nuevoReg;
+    private JF_VerRegistro verRegistros;
+    private Principal principal;
     /**
      * Creates new form logIn
      * @throws java.io.IOException
      */
     public JF_MenuInicial() throws IOException{
-        initComponents();
+        initComponents();        
+        principal = new Principal();
         this.getContentPane().setBackground(panelPrinicpal.getBackground());
-        pack();        
-        this.nuevoReg = new JF_NuevoReg(this);
+        pack();
         System.out.println("HOOOLA");
     }
 
@@ -120,10 +122,23 @@ public class JF_MenuInicial extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbVerRegistrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVerRegistrosActionPerformed
-   
+        try {
+            if(verRegistros == null){                
+                verRegistros = new JF_VerRegistro(this, principal);
+            }else{
+                verRegistros.dispose();
+                verRegistros = new JF_VerRegistro(this, principal);
+            }
+            verRegistros.setVisible(true);
+            this.setVisible(false);
+        } catch (IOException ex) {
+            Logger.getLogger(JF_MenuInicial.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jbVerRegistrosActionPerformed
 
     private void jbAgregarRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAgregarRegistroActionPerformed
+                
+        nuevoReg = new JF_NuevoReg(this, principal);
         nuevoReg.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jbAgregarRegistroActionPerformed
