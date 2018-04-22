@@ -4,15 +4,17 @@ package ss;
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 /**
- *@author  
- *José Rodrigo Narváez Berlanga A01377566	
- *Miguel Ángel Garza González A01377346
- *Jorge Alexis Rubio Sumano A01372074
+ *
+ * @author 
+ * Dachely Otero Argote
+ * Ernesto Alejandro Cervantes Villa
+ * Jorge Alexis Rubio Sumano
+ * 
  */
 /**
  * 
  * Genera el AbtractTableModel de cada arreglo de Objetos
- * Tiene 4 constructores dependiendo del arreglo de objetos que se regrese
+ * Depende de la categoria que se mande como indice
  * 
  */
 public final class ModeloTabla extends AbstractTableModel{

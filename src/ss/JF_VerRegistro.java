@@ -7,10 +7,13 @@ package ss;
 
 import java.io.IOException;
 import javax.swing.table.DefaultTableModel;
-
 /**
  *
- * @author Alexis
+ * @author 
+ * Dachely Otero Argote
+ * Ernesto Alejandro Cervantes Villa
+ * Jorge Alexis Rubio Sumano
+ * 
  */
 public class JF_VerRegistro extends javax.swing.JFrame {
     
