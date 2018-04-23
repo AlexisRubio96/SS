@@ -9,4 +9,6 @@
 9,Benito,Juarez,9-3-2000,M,40.0,1.5,ALUMNO,Juarez,0.0
 10,Jorge,Rubio,7-11-1996,M,65.0,1.78,ALUMNO,TEC,0.0
 11,Omar,Lopez,21-4-1996,M,89.0,1.9,ALUMNO,,0.0
-12,Giovanni,Dos Santos,1-0-1990,M,70.0,1.73,ALUMNO,FMF,0.0
+12,Giovanni,Dos Santos,1-1-1990,M,70.0,1.73,ALUMNO,FMF,0.0
+13,Leonardo,Aguiñiga,1-1-2018,M,80.0,1.75,ALUMNO,TEC,0.0
+14,Hector,Aguirre,1-1-2017,M,90.0,2.0,JEFE_FAMILIA,,0.0

@@ -405,7 +405,7 @@ public class JF_NuevoReg extends javax.swing.JFrame {
     
     private String getFecha() {
         String dia = Integer.toString(jdcFechaNac.getCalendar().get(Calendar.DAY_OF_MONTH));
-        String mes = Integer.toString(jdcFechaNac.getCalendar().get(Calendar.MONTH));
+        String mes = Integer.toString(jdcFechaNac.getCalendar().get(Calendar.MONTH + 1));
         String año = Integer.toString(jdcFechaNac.getCalendar().get(Calendar.YEAR));
         String fecha = dia + "-" + mes + "-" + año;
         return fecha;
