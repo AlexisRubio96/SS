@@ -21,11 +21,9 @@ public /*abstract*/ class Registro{
     protected Categoria categoria;
     protected RangoObesidad rangoObesidad;
     protected Double imc;
-    protected String Escuela;
-    protected Double tallaEdad;
 
 
-    public Registro(int IDregistro, String nombre , String apellido, String edad, String sexo, Double peso, Double talla, Categoria categoria, String escuela, Double tallaEdad) {
+    public Registro(int IDregistro, String nombre , String apellido, String edad, String sexo, Double peso, Double talla, Categoria categoria) {
         this.IDregistro = IDregistro;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -36,8 +34,6 @@ public /*abstract*/ class Registro{
         this.categoria = categoria;
         this.imc = peso/Math.pow(talla, 2);
         this.setRangoObesidad();
-        this.Escuela = escuela;
-        this.tallaEdad = tallaEdad;
     }
     
 
@@ -135,21 +131,7 @@ public /*abstract*/ class Registro{
     public void setImc(Double imc) {
         this.imc = imc;
     }
-
-    public String getEscuela() {
-        return Escuela;
-    }
-
-    public Double getTallaEdad() {
-        return tallaEdad;
-    }
-
-    public void setEscuela(String Escuela) {
-        this.Escuela = Escuela;
-    }
-
-    public void setTallaEdad(Double tallaEdad) {
-        this.tallaEdad = tallaEdad;
-    }   
+    
+    
 
 }
