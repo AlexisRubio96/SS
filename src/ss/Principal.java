@@ -26,7 +26,7 @@ public class Principal {
     }
     
     public ArrayList<Registro> getRegistros() {
-        System.out.println(regis.get(0));
+        //System.out.println(regis.get(0));
         return regis;
     }
     
@@ -61,11 +61,11 @@ public class Principal {
                     else if(datos[7].equals("Preparadores de Comida")){
                         categoria = Categoria.PREP_COMIDA;
                     }
-                    else if(datos[7].equals("Voluntario")){
+                    else{
                         categoria = Categoria.VOLUNTARIO;
                     }
-                    
-                    reg= new Registro(Integer.parseInt(datos[0]),datos[1],datos[2], datos[3],datos[4], Double.parseDouble(datos[5]), Double.parseDouble(datos[6]), Categoria.ALUMNO );
+                    //                  int IDregistro, String nombre , String apellido, String edad, String sexo, Double peso, Double talla, Categoria categoria, String escuela, Double tallaEdad)
+                    reg= new Registro(Integer.parseInt(datos[0]),datos[1],datos[2], datos[3],datos[4], Double.parseDouble(datos[5]), Double.parseDouble(datos[6]), categoria, datos[8], Double.parseDouble(datos[9]));
                 } catch (Exception e) {
                     System.err.println(e);
                 }

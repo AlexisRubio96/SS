@@ -1,7 +1,2 @@
-1,Jorge,Rubio,21,M,65.0,1.78,ALUMNO
-2,Ernesto,Cervantes,20,M,72.0,1.78,ALUMNO
-3,joj,jojo,88,M,45.0,1.65,ALUMNO
-4,ioio,ioio,45,M,23.0,1.43,ALUMNO
-5,ioi,ioio,ioio,M,1.34,67.0,ALUMNO
-6,fe,rere,432,M,45.0,1.98,ALUMNO
-7,dfd,rere,432,M,45.0,1.98,ALUMNO
+1,Jorge,Rubio,21,M,65.0,1.78,ALUMNO,TEC,0.0
+2,Pedro,Paramo,18,M,60.0,1.7,VOLUNTARIO,,0.0
