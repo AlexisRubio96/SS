@@ -1,10 +1,14 @@
 package ss;
 
 
+import com.toedter.calendar.JDateChooser;
 import java.awt.Color;
+import java.awt.event.KeyEvent;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -45,6 +49,7 @@ public class JF_NuevoReg extends javax.swing.JFrame {
         this();
         this.principal = principal;
         this.menuInicial = menuInicial;
+        resetCampos();
     }
     
     public void resetCampos(){        
@@ -52,9 +57,10 @@ public class JF_NuevoReg extends javax.swing.JFrame {
         jlRestriccion_campos.setVisible(false);
         jtNombre.setText("");
         jtApellido.setText("");
-        jdcFechaNac.cleanup();
+        Date fecha = new Date();
+        jdcFechaNac.setDate(fecha);
         jtPeso.setText("");
-        jtTalla.setText(""); 
+        jtTalla.setText("");
     }
     
 
@@ -101,6 +107,11 @@ public class JF_NuevoReg extends javax.swing.JFrame {
         getContentPane().setLayout(new java.awt.FlowLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jPanel1KeyPressed(evt);
+            }
+        });
 
         jLNombre.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         jLNombre.setText("Nombre(s):");
@@ -109,6 +120,11 @@ public class JF_NuevoReg extends javax.swing.JFrame {
         jtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtNombreActionPerformed(evt);
+            }
+        });
+        jtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jtNombreKeyPressed(evt);
             }
         });
 
@@ -128,6 +144,11 @@ public class JF_NuevoReg extends javax.swing.JFrame {
         jLabel6.setText("Talla:");
 
         jtTalla.setColumns(15);
+        jtTalla.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jtTallaKeyPressed(evt);
+            }
+        });
 
         jcbCategoria.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jcbCategoria.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Alumno", "Maestro", "Jefe De Familia", "Preparadores de Comida", "Directivo", "Voluntario" }));
@@ -166,6 +187,12 @@ public class JF_NuevoReg extends javax.swing.JFrame {
         jlRestriccionPT.setForeground(new java.awt.Color(255, 51, 51));
         jlRestriccionPT.setText("**Campos Peso o Talla no validos");
 
+        jtPeso.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jtPesoKeyPressed(evt);
+            }
+        });
+
         jLabel3.setText("(Kg)");
 
         jLabel4.setText("(m)");
@@ -173,6 +200,11 @@ public class JF_NuevoReg extends javax.swing.JFrame {
         jtApellido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtApellidoActionPerformed(evt);
+            }
+        });
+        jtApellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jtApellidoKeyPressed(evt);
             }
         });
 
@@ -185,6 +217,12 @@ public class JF_NuevoReg extends javax.swing.JFrame {
         jcbSexo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jcbSexoActionPerformed(evt);
+            }
+        });
+
+        jdcFechaNac.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jdcFechaNacKeyPressed(evt);
             }
         });
 
@@ -270,7 +308,7 @@ public class JF_NuevoReg extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jtPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3))))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -316,7 +354,7 @@ public class JF_NuevoReg extends javax.swing.JFrame {
         
         //Implementar try catch para restringir double
         try{
-            
+            //Definir categoria
             if(jcbCategoria.getSelectedIndex() == 0){
                 cat = Categoria.ALUMNO;
             }else if(jcbCategoria.getSelectedIndex() == 1){
@@ -330,17 +368,18 @@ public class JF_NuevoReg extends javax.swing.JFrame {
             }else{
                 cat = Categoria.VOLUNTARIO;
             }
-            
+            //Obtener fecha de nacimiento
+            String fechaNac = getFecha();           
+            //Restriccion campos vacios
             if(jtApellido.getText().equals("") || jdcFechaNac.getDate().toString().equals("") || jtNombre.getText().equals("") || jtPeso.getText().equals("") || jtTalla.getText().equals("")){
                 throw new NullPointerException();
             }
+            //Restriccion campos peso y talla
             peso = Double.parseDouble(jtPeso.getText());
             talla = Double.parseDouble(jtTalla.getText());
-            
-            registro = new Registro(1, jtNombre.getText(), jtApellido.getText(), jdcFechaNac.getDateFormatString(), jcbSexo.getModel().getSelectedItem().toString(), peso, talla, cat, "", 0.0);
-            //vaciar campos
-    
-           
+            //Creacion del registro a guardar
+            registro = new Registro(1, jtNombre.getText(), jtApellido.getText(), fechaNac, jcbSexo.getModel().getSelectedItem().toString(), peso, talla, cat, "", 0.0);
+            //Nueva ventana tipo guardarReg
             if(guardarReg == null){
                 try {
                     guardarReg = new JF_GuardarReg(principal, registro, this);
@@ -363,7 +402,14 @@ public class JF_NuevoReg extends javax.swing.JFrame {
             jlRestriccion_campos.setVisible(true);
         }
     }//GEN-LAST:event_jbSiguienteActionPerformed
-
+    
+    private String getFecha() {
+        String dia = Integer.toString(jdcFechaNac.getCalendar().get(Calendar.DAY_OF_MONTH));
+        String mes = Integer.toString(jdcFechaNac.getCalendar().get(Calendar.MONTH));
+        String año = Integer.toString(jdcFechaNac.getCalendar().get(Calendar.YEAR));
+        String fecha = dia + "-" + mes + "-" + año;
+        return fecha;
+    }
     
     private void jBcancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBcancelarActionPerformed
             this.setVisible(false);
@@ -384,6 +430,42 @@ public class JF_NuevoReg extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jcbSexoActionPerformed
 
+    private void jPanel1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPanel1KeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            jbSiguienteActionPerformed(null);
+        }
+    }//GEN-LAST:event_jPanel1KeyPressed
+
+    private void jtNombreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtNombreKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            jbSiguienteActionPerformed(null);
+        }
+    }//GEN-LAST:event_jtNombreKeyPressed
+
+    private void jtApellidoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtApellidoKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            jbSiguienteActionPerformed(null);
+        }
+    }//GEN-LAST:event_jtApellidoKeyPressed
+
+    private void jdcFechaNacKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jdcFechaNacKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            jbSiguienteActionPerformed(null);
+        }
+    }//GEN-LAST:event_jdcFechaNacKeyPressed
+
+    private void jtPesoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtPesoKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            jbSiguienteActionPerformed(null);
+        }
+    }//GEN-LAST:event_jtPesoKeyPressed
+
+    private void jtTallaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtTallaKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            jbSiguienteActionPerformed(null);
+        }
+    }//GEN-LAST:event_jtTallaKeyPressed
+    
     /**
      * @param args the command line arguments
      */
@@ -447,4 +529,6 @@ public class JF_NuevoReg extends javax.swing.JFrame {
     private javax.swing.JTextField jtPeso;
     private javax.swing.JTextField jtTalla;
     // End of variables declaration//GEN-END:variables
+
+
 }

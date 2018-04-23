@@ -1,5 +1,7 @@
 package ss;
 
+import java.util.Date;
+
 /**
  *
  * @author 
@@ -14,7 +16,7 @@ public /*abstract*/ class Registro{
     protected int IDregistro;
     protected String nombre;
     protected String apellido;
-    protected String edad;
+    protected String fechaNac;
     protected String sexo;
     protected Double peso;
     protected Double talla;
@@ -25,11 +27,11 @@ public /*abstract*/ class Registro{
     protected Double tallaEdad;
 
 
-    public Registro(int IDregistro, String nombre , String apellido, String edad, String sexo, Double peso, Double talla, Categoria categoria, String escuela, Double tallaEdad) {
+    public Registro(int IDregistro, String nombre , String apellido, String fechaNac, String sexo, Double peso, Double talla, Categoria categoria, String escuela, Double tallaEdad) {
         this.IDregistro = IDregistro;
         this.nombre = nombre;
         this.apellido = apellido;
-        this.edad = edad;
+        this.fechaNac = fechaNac;
         this.sexo = sexo;
         this.peso = peso;
         this.talla = talla;
@@ -40,7 +42,7 @@ public /*abstract*/ class Registro{
         this.tallaEdad = tallaEdad;
     }
     
-
+    
     private void setRangoObesidad() {
         if(imc < 25){
             this.rangoObesidad = RangoObesidad.VERDE;
@@ -53,7 +55,7 @@ public /*abstract*/ class Registro{
     
     @Override
     public String toString() {
-        return IDregistro + "," + nombre + "," + apellido + "," + edad + ","+ sexo + "," + peso + "," + talla + "," + categoria + "," + rangoObesidad + "," + imc;
+        return IDregistro + "," + nombre + "," + apellido + "," + fechaNac + ","+ sexo + "," + peso + "," + talla + "," + categoria + "," + rangoObesidad + "," + imc;
     }    
 
     public int getIDregistro() {
@@ -80,12 +82,13 @@ public /*abstract*/ class Registro{
         this.apellido = apellido;
     }
 
-    public String getEdad() {
-        return edad;
+    public String getFechaNac() {
+        
+        return fechaNac;
     }
 
-    public void setEdad(String edad) {
-        this.edad = edad;
+    public void setFecha(String edad) {
+        this.fechaNac = edad;
     }
 
     public String getSexo() {
@@ -150,6 +153,16 @@ public /*abstract*/ class Registro{
 
     public void setTallaEdad(Double tallaEdad) {
         this.tallaEdad = tallaEdad;
-    }   
+    }
+    
+    public String getEdad(){
+        String[] fecha = this.getFechaNac().split("-");     //Fecha de nacimiento del registro
+        int año = Integer.parseInt(fecha[2]);       //Se obtiene año
+        Date fechaActual = new Date();      //Fecha al dia actual
+        int añoActual = fechaActual.getYear() + 1900;   //Comienza a partir de 1900 en jave Date
+        System.out.println(añoActual + " ## " + año);
+        int edad = añoActual-año;
+        return String.valueOf(edad);
+    }
 
 }

@@ -1,8 +1,9 @@
-1,Jorge,Rubio,21,M,65.0,1.78,ALUMNO,TEC,0.0
-2,Pedro,Paramo,18,M,60.0,1.7,VOLUNTARIO,,0.0
-3,Florentino,Ariza,56,M,80.0,1.8,MAESTRO,NA,0.0
-4,Josefina,Valdez,89,F,89.0,1.9,JEFE_FAMILIA,,0.0
-5,Petyr,Baeilish,32,M,60.0,1.75,PREP_COMIDA,,0.0
-6,Jacob,Keyes,57,M,96.0,1.94,DIRECTIVO,,0.0
-7,Juan,Rodriguez,89,F,89.0,1.9,ALUMNO,ITAM,0.0
-8,Erick,Rubio,d/MM/yyyy,M,54.0,1.6,ALUMNO,54,0.0
+1,Jorge,Rubio,7-11-1996,M,65.0,1.78,ALUMNO,TEC,0.0
+2,Pedro,Paramo,10-10-2004,M,60.0,1.7,VOLUNTARIO,,0.0
+3,Florentino,Ariza,10-12-1994,M,80.0,1.8,MAESTRO,NA,0.0
+4,Josefina,Valdez,20-3-2005,F,89.0,1.9,JEFE_FAMILIA,,0.0
+5,Petyr,Baeilish,13-2-1945,M,60.0,1.75,PREP_COMIDA,,0.0
+6,Jacob,Keyes,30-2-2000,M,96.0,1.94,DIRECTIVO,,0.0
+7,Juan,Rodriguez,20-11-2000,F,89.0,1.9,ALUMNO,ITAM,0.0
+8,Erick,Rubio,10-1-1998,M,54.0,1.6,ALUMNO,54,0.0
+9,Benito,Juarez,9-3-2000,M,40.0,1.5,ALUMNO,Juarez,0.0

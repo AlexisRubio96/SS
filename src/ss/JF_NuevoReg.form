@@ -53,6 +53,9 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jPanel1KeyPressed"/>
+      </Events>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -160,7 +163,7 @@
                       <Group type="102" attributes="0">
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jtPeso" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                              <Component id="jtPeso" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -209,6 +212,7 @@
           </AccessibilityProperties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtNombreActionPerformed"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtNombreKeyPressed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
@@ -255,6 +259,9 @@
           <Properties>
             <Property name="columns" type="int" value="15"/>
           </Properties>
+          <Events>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtTallaKeyPressed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JComboBox" name="jcbCategoria">
           <Properties>
@@ -335,6 +342,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jtPeso">
+          <Events>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtPesoKeyPressed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
@@ -349,6 +359,7 @@
         <Component class="javax.swing.JTextField" name="jtApellido">
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtApellidoActionPerformed"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtApellidoKeyPressed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jlRestriccion_campos">
@@ -377,6 +388,9 @@
           </Events>
         </Component>
         <Component class="com.toedter.calendar.JDateChooser" name="jdcFechaNac">
+          <Events>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jdcFechaNacKeyPressed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

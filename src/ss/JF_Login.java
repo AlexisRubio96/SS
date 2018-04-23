@@ -5,6 +5,7 @@
  */
 package ss;
 
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -44,10 +45,15 @@ public class JF_Login extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jTUsuario = new javax.swing.JTextField();
         jPasswordField = new javax.swing.JPasswordField();
-        jbVerRegistros = new javax.swing.JButton();
-        jbVerRegistros1 = new javax.swing.JButton();
+        jbCancelar = new javax.swing.JButton();
+        jbAceptar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                formKeyPressed(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -58,24 +64,29 @@ public class JF_Login extends javax.swing.JFrame {
         jTUsuario.setColumns(10);
 
         jPasswordField.setColumns(10);
-
-        jbVerRegistros.setBackground(new java.awt.Color(0, 102, 102));
-        jbVerRegistros.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
-        jbVerRegistros.setForeground(new java.awt.Color(255, 255, 255));
-        jbVerRegistros.setText("Cancelar");
-        jbVerRegistros.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbVerRegistrosActionPerformed(evt);
+        jPasswordField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jPasswordFieldKeyPressed(evt);
             }
         });
 
-        jbVerRegistros1.setBackground(new java.awt.Color(0, 102, 102));
-        jbVerRegistros1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
-        jbVerRegistros1.setForeground(new java.awt.Color(255, 255, 255));
-        jbVerRegistros1.setText("Aceptar");
-        jbVerRegistros1.addActionListener(new java.awt.event.ActionListener() {
+        jbCancelar.setBackground(new java.awt.Color(0, 102, 102));
+        jbCancelar.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
+        jbCancelar.setForeground(new java.awt.Color(255, 255, 255));
+        jbCancelar.setText("Cancelar");
+        jbCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbVerRegistros1ActionPerformed(evt);
+                jbCancelarActionPerformed(evt);
+            }
+        });
+
+        jbAceptar.setBackground(new java.awt.Color(0, 102, 102));
+        jbAceptar.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
+        jbAceptar.setForeground(new java.awt.Color(255, 255, 255));
+        jbAceptar.setText("Aceptar");
+        jbAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbAceptarActionPerformed(evt);
             }
         });
 
@@ -96,9 +107,9 @@ public class JF_Login extends javax.swing.JFrame {
                             .addComponent(jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(40, 40, 40)
-                        .addComponent(jbVerRegistros1)
+                        .addComponent(jbAceptar)
                         .addGap(28, 28, 28)
-                        .addComponent(jbVerRegistros)))
+                        .addComponent(jbCancelar)))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
@@ -106,7 +117,7 @@ public class JF_Login extends javax.swing.JFrame {
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jLabel1, jLabel2});
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jbVerRegistros, jbVerRegistros1});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jbAceptar, jbCancelar});
 
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -121,14 +132,14 @@ public class JF_Login extends javax.swing.JFrame {
                     .addComponent(jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbVerRegistros1)
-                    .addComponent(jbVerRegistros))
+                    .addComponent(jbAceptar)
+                    .addComponent(jbCancelar))
                 .addGap(23, 23, 23))
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLabel1, jLabel2, jPasswordField, jTUsuario});
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jbVerRegistros, jbVerRegistros1});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jbAceptar, jbCancelar});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -144,11 +155,11 @@ public class JF_Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jbVerRegistrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVerRegistrosActionPerformed
+    private void jbCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelarActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_jbVerRegistrosActionPerformed
+    }//GEN-LAST:event_jbCancelarActionPerformed
 
-    private void jbVerRegistros1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVerRegistros1ActionPerformed
+    private void jbAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAceptarActionPerformed
         if(String.valueOf(jTUsuario.getText()).compareTo("Admin") == 0 && String.valueOf(jPasswordField.getPassword()).compareTo("admin") == 0){
             menuInicio.setVisible(true);
             dispose();
@@ -156,8 +167,20 @@ public class JF_Login extends javax.swing.JFrame {
         else{
             JOptionPane.showMessageDialog(rootPane, "Usuario o contraseña incorrecto");
         }
-    }//GEN-LAST:event_jbVerRegistros1ActionPerformed
+    }//GEN-LAST:event_jbAceptarActionPerformed
 
+    private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formKeyPressed
+
+    private void jPasswordFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordFieldKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            jbAceptarActionPerformed(null);
+        }
+    }//GEN-LAST:event_jPasswordFieldKeyPressed
+    
+
+    
     /**
      * @param args the command line arguments
      */
@@ -204,7 +227,7 @@ public class JF_Login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField;
     private javax.swing.JTextField jTUsuario;
-    private javax.swing.JButton jbVerRegistros;
-    private javax.swing.JButton jbVerRegistros1;
+    private javax.swing.JButton jbAceptar;
+    private javax.swing.JButton jbCancelar;
     // End of variables declaration//GEN-END:variables
 }
