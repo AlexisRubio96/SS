@@ -1,5 +1,6 @@
 package ss;
 
+import java.text.DecimalFormat;
 import java.util.Date;
 
 /**
@@ -132,7 +133,8 @@ public /*abstract*/ class Registro{
     }
 
     public Double getImc() {
-        return imc;
+        DecimalFormat numberFormat = new DecimalFormat("#.00");
+        return Double.parseDouble(String.valueOf(numberFormat.format(imc)));
     }
 
     public void setImc(Double imc) {

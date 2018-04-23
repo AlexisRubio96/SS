@@ -77,6 +77,10 @@ public class JF_GuardarReg extends javax.swing.JFrame {
             jlTallaEdad.setVisible(false);
             jtTallaEdad.setVisible(false);
         }
+        else if(cat == Categoria.MAESTRO){
+            jlTallaEdad.setVisible(false);
+            jtTallaEdad.setVisible(false);
+        }
     }
 
     /**
@@ -166,38 +170,40 @@ public class JF_GuardarReg extends javax.swing.JFrame {
         jPanelGuardarReg.setLayout(jPanelGuardarRegLayout);
         jPanelGuardarRegLayout.setHorizontalGroup(
             jPanelGuardarRegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelGuardarRegLayout.createSequentialGroup()
-                .addGap(43, 43, 43)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelGuardarRegLayout.createSequentialGroup()
                 .addGroup(jPanelGuardarRegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jlRangoObesidad)
-                    .addComponent(jlIMC)
-                    .addComponent(jlEscuela)
-                    .addComponent(jlTallaEdad))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanelGuardarRegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelGuardarRegLayout.createSequentialGroup()
+                        .addGap(81, 81, 81)
+                        .addComponent(jlTallaEdad)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jtTallaEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelGuardarRegLayout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addGroup(jPanelGuardarRegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jlRangoObesidad)
+                            .addComponent(jlIMC)
+                            .addComponent(jlEscuela))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanelGuardarRegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jtRangoObesidad, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jtEscuela, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtIMC, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(206, 206, 206))
-                    .addGroup(jPanelGuardarRegLayout.createSequentialGroup()
-                        .addComponent(jtTallaEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addComponent(jLabel1)
-                .addGap(52, 52, 52))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelGuardarRegLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jbGuardad)
-                .addGap(18, 18, 18)
-                .addComponent(jcCancelar)
-                .addGap(33, 33, 33))
+                            .addComponent(jtIMC, javax.swing.GroupLayout.Alignment.LEADING))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
+                .addGroup(jPanelGuardarRegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelGuardarRegLayout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(52, 52, 52))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelGuardarRegLayout.createSequentialGroup()
+                        .addComponent(jbGuardad)
+                        .addGap(18, 18, 18)
+                        .addComponent(jcCancelar)
+                        .addGap(33, 33, 33))))
         );
         jPanelGuardarRegLayout.setVerticalGroup(
             jPanelGuardarRegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelGuardarRegLayout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addGroup(jPanelGuardarRegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanelGuardarRegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelGuardarRegLayout.createSequentialGroup()
                         .addGroup(jPanelGuardarRegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanelGuardarRegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -208,20 +214,20 @@ public class JF_GuardarReg extends javax.swing.JFrame {
                                     .addComponent(jtIMC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jlIMC))
                                 .addGap(35, 35, 35)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
                         .addGroup(jPanelGuardarRegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jtTallaEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jlTallaEdad)))
+                            .addComponent(jlEscuela)
+                            .addComponent(jtEscuela, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel1))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelGuardarRegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlEscuela)
-                    .addComponent(jtEscuela, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jtTallaEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jlTallaEdad))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelGuardarRegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbGuardad)
                     .addComponent(jcCancelar))
-                .addContainerGap(137, Short.MAX_VALUE))
+                .addContainerGap(149, Short.MAX_VALUE))
         );
 
         jtIMC.getAccessibleContext().setAccessibleDescription("");
