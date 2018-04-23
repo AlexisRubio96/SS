@@ -161,7 +161,7 @@ public class JF_NuevoReg extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/logo_pequeño_1.png"))); // NOI18N
 
         jlRestriccionPT.setForeground(new java.awt.Color(255, 51, 51));
-        jlRestriccionPT.setText("**Campos Peso o Talla no validos");
+        jlRestriccionPT.setText("**Todos los campos son obligatorios**");
 
         jLabel3.setText("(Kg)");
 
@@ -312,6 +312,10 @@ public class JF_NuevoReg extends javax.swing.JFrame {
                 cat = Categoria.VOLUNTARIO;
             }
             
+            if(jtApellido.getText().equals("") || jtEdad.getText().equals("") || jtNombre.getText().equals("") || jtSexo.getText().equals("") || jtPeso.getText().equals("") || jtTalla.getText().equals("")){
+                throw new Exception("");
+            }
+            
             registro = new Registro(1, jtNombre.getText(), jtApellido.getText(), jtEdad.getText(), jtSexo.getText(), peso, talla, cat, "", 0.0);
             //vaciar campos
             jtNombre.setText("");
@@ -338,6 +342,8 @@ public class JF_NuevoReg extends javax.swing.JFrame {
             guardarReg.setVisible(true);
             this.setVisible(false);
         }catch(NumberFormatException nFE){
+            jlRestriccionPT.setVisible(true);
+        } catch (Exception ex) {
             jlRestriccionPT.setVisible(true);
         }
     }//GEN-LAST:event_jbSiguienteActionPerformed
