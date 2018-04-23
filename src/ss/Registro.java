@@ -156,12 +156,27 @@ public /*abstract*/ class Registro{
     }
     
     public String getEdad(){
+        //Varibales fecha de nacimiento de registro
         String[] fecha = this.getFechaNac().split("-");     //Fecha de nacimiento del registro
-        int año = Integer.parseInt(fecha[2]);       //Se obtiene año
-        Date fechaActual = new Date();      //Fecha al dia actual
-        int añoActual = fechaActual.getYear() + 1900;   //Comienza a partir de 1900 en jave Date
-        System.out.println(añoActual + " ## " + año);
+        int año = Integer.parseInt(fecha[2]);
+        int mes = Integer.parseInt(fecha[1]);
+        int dia = Integer.parseInt(fecha[0]);
+        //Se obtiene año
+        Date fechaActual = new Date();      //Fecha al dia actual        
+        int añoActual = fechaActual.getYear() + 1899;   //Comienza a partir de 1900 en jave Date
+        int mesActual = fechaActual.getMonth()+1;
+        int diaActual = fechaActual.getDate();
+        //System.out.println(añoActual + " ## " + año);
         int edad = añoActual-año;
+        
+            System.out.println(mesActual + " ******** " + mes);
+        if(mesActual > mes){
+            edad++;
+        }else if(mesActual == mes){
+            if(diaActual >= dia){
+                edad++;
+            }
+        }
         return String.valueOf(edad);
     }
 

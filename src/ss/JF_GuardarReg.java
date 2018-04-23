@@ -329,7 +329,7 @@ public class JF_GuardarReg extends javax.swing.JFrame {
             archivoSal = new FileWriter("src/registros.txt", true);
             PrintWriter salida= new PrintWriter(archivoSal);            
             salida.println(r.getIDregistro()+","+ (r.getNombre())+","+ (r.getApellido()) +","+
-                    r.getEdad()+","+ (r.getSexo())+","+ (r.getPeso()) +","+
+                    r.getFechaNac()+","+ (r.getSexo())+","+ (r.getPeso()) +","+
                     r.getTalla()+","+ (r.getCategoria())+ ","+(r.getEscuela())+ ","+ (r.getTallaEdad()));
 
             salida.close();
