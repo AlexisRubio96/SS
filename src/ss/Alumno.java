@@ -13,7 +13,7 @@ package ss;
  * Jorge Alexis Rubio Sumano
  * 
  */
-
+/*hola*/
 /*Prueba pushh*/
 public class Alumno extends Registro{
     
