@@ -107,6 +107,11 @@ public class JF_NuevoReg extends javax.swing.JFrame {
         jLUserName.setText("Edad:");
 
         jtSexo.setColumns(10);
+        jtSexo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtSexoActionPerformed(evt);
+            }
+        });
 
         jLPass1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         jLPass1.setText("Sexo:");
@@ -292,6 +297,14 @@ public class JF_NuevoReg extends javax.swing.JFrame {
             talla = Double.parseDouble(jtTalla.getText());
             
             Registro registro = new Registro(1, jtNombre.getText(), jtApellido.getText(), jtEdad.getText(), jtSexo.getText(), peso, talla, Categoria.ALUMNO);
+            
+            jtNombre.setText("");
+            jtApellido.setText("");
+            jtEdad.setText("");
+            jtSexo.setText("");
+            jtPeso.setText("");
+            jtTalla.setText("");
+            
             if(guardarReg == null){
                 try {
                     guardarReg = new JF_GuardarReg(principal, registro, this);
@@ -328,6 +341,10 @@ public class JF_NuevoReg extends javax.swing.JFrame {
     private void jtApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtApellidoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtApellidoActionPerformed
+
+    private void jtSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtSexoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtSexoActionPerformed
 
     /**
      * @param args the command line arguments
