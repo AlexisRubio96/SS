@@ -47,6 +47,16 @@ public class JF_NuevoReg extends javax.swing.JFrame {
         this.menuInicial = menuInicial;
     }
     
+    public void resetCampos(){        
+        jlRestriccionPT.setVisible(false);
+        jlRestriccion_campos.setVisible(false);
+        jtNombre.setText("");
+        jtApellido.setText("");
+        jdcFechaNac.cleanup();
+        jtPeso.setText("");
+        jtTalla.setText(""); 
+    }
+    
 
 
     /**
@@ -306,8 +316,6 @@ public class JF_NuevoReg extends javax.swing.JFrame {
         
         //Implementar try catch para restringir double
         try{
-            peso = Double.parseDouble(jtPeso.getText());
-            talla = Double.parseDouble(jtTalla.getText());
             
             if(jcbCategoria.getSelectedIndex() == 0){
                 cat = Categoria.ALUMNO;
@@ -324,16 +332,14 @@ public class JF_NuevoReg extends javax.swing.JFrame {
             }
             
             if(jtApellido.getText().equals("") || jdcFechaNac.getDate().toString().equals("") || jtNombre.getText().equals("") || jtPeso.getText().equals("") || jtTalla.getText().equals("")){
-                throw new Exception("");
+                throw new NullPointerException();
             }
+            peso = Double.parseDouble(jtPeso.getText());
+            talla = Double.parseDouble(jtTalla.getText());
             
             registro = new Registro(1, jtNombre.getText(), jtApellido.getText(), jdcFechaNac.getDateFormatString(), jcbSexo.getModel().getSelectedItem().toString(), peso, talla, cat, "", 0.0);
             //vaciar campos
-            jtNombre.setText("");
-            jtApellido.setText("");
-            jdcFechaNac.cleanup();
-            jtPeso.setText("");
-            jtTalla.setText("");     
+    
            
             if(guardarReg == null){
                 try {
@@ -353,7 +359,7 @@ public class JF_NuevoReg extends javax.swing.JFrame {
             this.setVisible(false);
         }catch(NumberFormatException nFE){
             jlRestriccionPT.setVisible(true);
-        } catch (Exception ex) {
+        } catch (NullPointerException e) {
             jlRestriccion_campos.setVisible(true);
         }
     }//GEN-LAST:event_jbSiguienteActionPerformed

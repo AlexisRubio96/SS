@@ -257,12 +257,14 @@ public class JF_GuardarReg extends javax.swing.JFrame {
         registro.setIDregistro(principal.getRegistros().size());
         actualizarArchivoRegistros(this.registro);
         this.acepReg = new JF_Aceptado(nuevoRegistro);
+        nuevoRegistro.resetCampos();
         acepReg.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jbGuardadActionPerformed
 
     private void jcCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcCancelarActionPerformed
             this.setVisible(false);
+            nuevoRegistro.resetCampos();
             nuevoRegistro.setVisible(true);
     }//GEN-LAST:event_jcCancelarActionPerformed
 
