@@ -298,7 +298,22 @@ public class JF_NuevoReg extends javax.swing.JFrame {
             peso = Double.parseDouble(jtPeso.getText());
             talla = Double.parseDouble(jtTalla.getText());
             
-            Registro registro = new Registro(1, jtNombre.getText(), jtApellido.getText(), jtEdad.getText(), jtSexo.getText(), peso, talla, Categoria.ALUMNO);
+            Categoria cat;
+            if(jcbCategoria.getSelectedIndex() == 0){
+                cat = Categoria.ALUMNO;
+            }else if(jcbCategoria.getSelectedIndex() == 1){
+                cat = Categoria.MAESTRO;
+            }else if(jcbCategoria.getSelectedIndex() == 2){
+                cat = Categoria.JEFE_FAMILIA;
+            }else if(jcbCategoria.getSelectedIndex() == 3){
+                cat = Categoria.PREP_COMIDA;                
+            }else if(jcbCategoria.getSelectedIndex() == 4){
+                cat = Categoria.DIRECTIVO;
+            }else{
+                cat = Categoria.VOLUNTARIO;
+            }
+            
+            Registro registro = new Registro(1, jtNombre.getText(), jtApellido.getText(), jtEdad.getText(), jtSexo.getText(), peso, talla, cat);
             
             jtNombre.setText("");
             jtApellido.setText("");
@@ -306,6 +321,8 @@ public class JF_NuevoReg extends javax.swing.JFrame {
             jtSexo.setText("");
             jtPeso.setText("");
             jtTalla.setText("");
+            
+            
             
             if(guardarReg == null){
                 try {
