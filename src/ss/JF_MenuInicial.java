@@ -29,6 +29,9 @@ public class JF_MenuInicial extends javax.swing.JFrame {
         this.getContentPane().setBackground(panelPrinicpal.getBackground());
         pack();
         System.out.println("HOOOLA");
+        this.setLocationRelativeTo(null);
+        setResizable(false);
+        setTitle("Menú Inicio");
     }
 
     /**

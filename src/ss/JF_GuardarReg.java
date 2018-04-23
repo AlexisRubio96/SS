@@ -33,6 +33,8 @@ public class JF_GuardarReg extends javax.swing.JFrame {
         initComponents();
         this.getContentPane().setBackground(jPanelGuardarReg.getBackground());
         pack();
+        this.setLocationRelativeTo(null);
+        setResizable(false);
     }
     
  

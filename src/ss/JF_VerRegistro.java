@@ -31,6 +31,9 @@ public class JF_VerRegistro extends javax.swing.JFrame {
         initComponents();
         this.getContentPane().setBackground(panelPrincipal.getBackground());
         pack();
+        this.setLocationRelativeTo(null);
+        setResizable(false);
+        setTitle("Registros");
     }
     
     public JF_VerRegistro(JF_MenuInicial menuInicial, Principal principal) throws IOException{

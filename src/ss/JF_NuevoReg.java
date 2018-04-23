@@ -36,6 +36,8 @@ public class JF_NuevoReg extends javax.swing.JFrame {
         this.getContentPane().setBackground(jPanel1.getBackground());
         jlRestriccionPT.setVisible(false);
         pack();
+        this.setLocationRelativeTo(null);
+        setResizable(false);
     }
     
     public JF_NuevoReg(JF_MenuInicial menuInicial, Principal principal) {
