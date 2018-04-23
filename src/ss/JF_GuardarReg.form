@@ -61,18 +61,25 @@
                   <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="jlRangoObesidad" min="-2" max="-2" attributes="0"/>
-                      <Component id="jlTallaEdad" min="-2" max="-2" attributes="0"/>
                       <Component id="jlIMC" min="-2" max="-2" attributes="0"/>
                       <Component id="jlEscuela" min="-2" max="-2" attributes="0"/>
+                      <Component id="jlTallaEdad" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="jtRangoObesidad" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jtTallaEdad" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jtEscuela" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jtIMC" alignment="0" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="jtRangoObesidad" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jtEscuela" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jtIMC" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="206" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="jtTallaEdad" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="206" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
               </Group>
@@ -93,8 +100,8 @@
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jlTallaEdad" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jtTallaEdad" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jtRangoObesidad" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jlRangoObesidad" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -106,8 +113,8 @@
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jtRangoObesidad" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jlRangoObesidad" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jtTallaEdad" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jlTallaEdad" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>

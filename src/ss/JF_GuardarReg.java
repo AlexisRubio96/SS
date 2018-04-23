@@ -44,7 +44,8 @@ public class JF_GuardarReg extends javax.swing.JFrame {
         this.registro = registro;
         this.nuevoRegistro = nuevoReg;
         //Se puede cambiar variables a private y poner gets
-        this.setCampos();   //Llena los campos de IMC y rango Obesidad
+        this.setCampos();   //Llena los campos de IMC y rango Obesidad; 
+        this.setCamposVisibles();//verifica que categoria es para detemrinar campos a mostrar;
     }
     
     private void setCampos() {
@@ -64,6 +65,17 @@ public class JF_GuardarReg extends javax.swing.JFrame {
                 break;
             default:
                 break;
+         
+        }
+    }
+    
+    private void setCamposVisibles(){
+        Categoria cat = registro.getCategoria();
+        if(cat == Categoria.DIRECTIVO || cat == Categoria.JEFE_FAMILIA || cat == Categoria.PREP_COMIDA || cat == Categoria.VOLUNTARIO){
+            jlEscuela.setVisible(false);
+            jtEscuela.setVisible(false);
+            jlTallaEdad.setVisible(false);
+            jtTallaEdad.setVisible(false);
         }
     }
 
@@ -158,16 +170,20 @@ public class JF_GuardarReg extends javax.swing.JFrame {
                 .addGap(43, 43, 43)
                 .addGroup(jPanelGuardarRegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jlRangoObesidad)
-                    .addComponent(jlTallaEdad)
                     .addComponent(jlIMC)
-                    .addComponent(jlEscuela))
+                    .addComponent(jlEscuela)
+                    .addComponent(jlTallaEdad))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanelGuardarRegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jtRangoObesidad, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jtTallaEdad, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtEscuela, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtIMC, javax.swing.GroupLayout.Alignment.LEADING))
-                .addGap(206, 206, 206)
+                .addGroup(jPanelGuardarRegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelGuardarRegLayout.createSequentialGroup()
+                        .addGroup(jPanelGuardarRegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jtRangoObesidad, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jtEscuela, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtIMC, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(206, 206, 206))
+                    .addGroup(jPanelGuardarRegLayout.createSequentialGroup()
+                        .addComponent(jtTallaEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jLabel1)
                 .addGap(52, 52, 52))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelGuardarRegLayout.createSequentialGroup()
@@ -185,8 +201,8 @@ public class JF_GuardarReg extends javax.swing.JFrame {
                     .addGroup(jPanelGuardarRegLayout.createSequentialGroup()
                         .addGroup(jPanelGuardarRegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanelGuardarRegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jlTallaEdad)
-                                .addComponent(jtTallaEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jtRangoObesidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jlRangoObesidad))
                             .addGroup(jPanelGuardarRegLayout.createSequentialGroup()
                                 .addGroup(jPanelGuardarRegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jtIMC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -194,8 +210,8 @@ public class JF_GuardarReg extends javax.swing.JFrame {
                                 .addGap(35, 35, 35)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanelGuardarRegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jtRangoObesidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jlRangoObesidad)))
+                            .addComponent(jtTallaEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jlTallaEdad)))
                     .addComponent(jLabel1))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelGuardarRegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -230,10 +246,12 @@ public class JF_GuardarReg extends javax.swing.JFrame {
     }//GEN-LAST:event_jtIMCActionPerformed
 
     private void jbGuardadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardadActionPerformed
-        if(principal == null){
-            System.out.println("ES NULL");
-        }else{
-            System.out.println("No es Null");
+        if(registro.getCategoria() == Categoria.ALUMNO){
+            registro.setEscuela(jtEscuela.getText());
+            //**********************Falta ajustar la talla_edad********************
+        }
+        if(registro.getCategoria() == Categoria.MAESTRO){
+            registro.setEscuela(jtEscuela.getText());
         }
         principal.getRegistros().add(this.registro);
         registro.setIDregistro(principal.getRegistros().size());
@@ -310,7 +328,7 @@ public class JF_GuardarReg extends javax.swing.JFrame {
             PrintWriter salida= new PrintWriter(archivoSal);            
             salida.println(r.getIDregistro()+","+ (r.getNombre())+","+ (r.getApellido()) +","+
                     r.getEdad()+","+ (r.getSexo())+","+ (r.getPeso()) +","+
-                    r.getTalla()+","+ (r.getCategoria()));
+                    r.getTalla()+","+ (r.getCategoria())+ ","+(r.getEscuela())+ ","+ (r.getTallaEdad()));
 
             salida.close();
         } catch (Exception e) {

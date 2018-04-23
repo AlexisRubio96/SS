@@ -29,19 +29,7 @@ public final class ModeloTabla extends AbstractTableModel{
         this.indice = indice;
         datos = new String[]{"Nombre","Apellido","Edad", "Peso","Talla","Categoria","IMC"};
         datosTabla = new ArrayList<Registro>();
-        /*
-        if(principal.getRegistros().get(0) == null){            
-            System.out.println("Es null 1");
-        }else{
-            System.out.println("No es null 1");
-        }*/
         setDatosTabla();
-        /*
-        if(datosTabla.get(0) == null){            
-            System.out.println("Es null 2");
-        }else{
-            System.out.println("No es null 2");
-        }*/
     }
     
     //Llena el arreglo de datos para la tabla dependiendo de la categoria
@@ -113,11 +101,6 @@ public final class ModeloTabla extends AbstractTableModel{
     public Object getValueAt(int row, int col){
         
         //"Nombre","Apellido","Edad", "Peso","Talla","Categoria","IMC"
-        if(datosTabla.get(row) == null){            
-            System.out.println("Es null");
-        }else{
-            System.out.println("No es null");
-        }
         //Recorre las filas por cada columna
         switch(col){
             case 0:

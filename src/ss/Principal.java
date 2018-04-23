@@ -26,7 +26,7 @@ public class Principal {
     }
     
     public ArrayList<Registro> getRegistros() {
-        System.out.println(regis.get(0));
+        //System.out.println(regis.get(0));
         return regis;
     }
     
@@ -47,25 +47,27 @@ public class Principal {
                 try {
                     
                     Categoria categoria;
-            
+                    System.out.println(datos[7]);
                     //Determinar la categoria
-                    if(datos[7].equals("Alumno")){
+                    if(datos[7].equals("ALUMNO")){
                         categoria = Categoria.ALUMNO;
                     }
-                    else if(datos[7].equals("Directivo")){
+                    else if(datos[7].equals("DIRECTIVO")){
                         categoria = Categoria.DIRECTIVO;
                     }
-                    else if(datos[7].equals("Jefe de Familia")){
+                    else if(datos[7].equals("JEFE_FAMILIA")){
                         categoria = Categoria.JEFE_FAMILIA;
                     }
-                    else if(datos[7].equals("Preparadores de Comida")){
+                    else if(datos[7].equals("PREP_COMIDA")){
                         categoria = Categoria.PREP_COMIDA;
                     }
-                    else if(datos[7].equals("Voluntario")){
+                    else if(datos[7].equals("VOLUNTARIO")){
                         categoria = Categoria.VOLUNTARIO;
+                    }else{
+                        categoria = Categoria.MAESTRO;
                     }
-                    
-                    reg= new Registro(Integer.parseInt(datos[0]),datos[1],datos[2], datos[3],datos[4], Double.parseDouble(datos[5]), Double.parseDouble(datos[6]), Categoria.ALUMNO );
+                    //                  int IDregistro, String nombre , String apellido, String edad, String sexo, Double peso, Double talla, Categoria categoria, String escuela, Double tallaEdad)
+                    reg= new Registro(Integer.parseInt(datos[0]),datos[1],datos[2], datos[3],datos[4], Double.parseDouble(datos[5]), Double.parseDouble(datos[6]), categoria, datos[8], Double.parseDouble(datos[9]));
                 } catch (Exception e) {
                     System.err.println(e);
                 }

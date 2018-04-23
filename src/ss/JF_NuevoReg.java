@@ -26,7 +26,7 @@ public class JF_NuevoReg extends javax.swing.JFrame {
     private RangoObesidad rangoObesidad;
     private Principal principal;
     private Registro registro;
-    
+    private Categoria cat;
     
     /**
      * Creates new form NuevoUsuario
@@ -298,7 +298,6 @@ public class JF_NuevoReg extends javax.swing.JFrame {
             peso = Double.parseDouble(jtPeso.getText());
             talla = Double.parseDouble(jtTalla.getText());
             
-            Categoria cat;
             if(jcbCategoria.getSelectedIndex() == 0){
                 cat = Categoria.ALUMNO;
             }else if(jcbCategoria.getSelectedIndex() == 1){
@@ -313,17 +312,15 @@ public class JF_NuevoReg extends javax.swing.JFrame {
                 cat = Categoria.VOLUNTARIO;
             }
             
-            Registro registro = new Registro(1, jtNombre.getText(), jtApellido.getText(), jtEdad.getText(), jtSexo.getText(), peso, talla, cat);
-            
+            registro = new Registro(1, jtNombre.getText(), jtApellido.getText(), jtEdad.getText(), jtSexo.getText(), peso, talla, cat, "", 0.0);
+            //vaciar campos
             jtNombre.setText("");
             jtApellido.setText("");
             jtEdad.setText("");
             jtSexo.setText("");
             jtPeso.setText("");
-            jtTalla.setText("");
-            
-            
-            
+            jtTalla.setText("");     
+           
             if(guardarReg == null){
                 try {
                     guardarReg = new JF_GuardarReg(principal, registro, this);
