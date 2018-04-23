@@ -313,17 +313,8 @@ public class JF_NuevoReg extends javax.swing.JFrame {
                 cat = Categoria.VOLUNTARIO;
             }
             
-<<<<<<< HEAD
             Registro registro = new Registro(1, jtNombre.getText(), jtApellido.getText(), jtEdad.getText(), jtSexo.getText(), peso, talla, cat);
             
-=======
-            if(jtApellido.getText().equals("") || jtEdad.getText().equals("") || jtNombre.getText().equals("") || jtSexo.getText().equals("") || jtPeso.getText().equals("") || jtTalla.getText().equals("")){
-                throw new Exception("");
-            }
-            
-            registro = new Registro(1, jtNombre.getText(), jtApellido.getText(), jtEdad.getText(), jtSexo.getText(), peso, talla, cat, "", 0.0);
-            //vaciar campos
->>>>>>> 0d46597fb4249f1c5a392c5f7b8525e78a37e5dd
             jtNombre.setText("");
             jtApellido.setText("");
             jtEdad.setText("");
@@ -350,7 +341,6 @@ public class JF_NuevoReg extends javax.swing.JFrame {
             guardarReg.setVisible(true);
             this.setVisible(false);
         }catch(NumberFormatException nFE){
-            jlRestriccionPT.setVisible(true);
             jlRestriccionPT.setVisible(true);
         }
     }//GEN-LAST:event_jbSiguienteActionPerformed
