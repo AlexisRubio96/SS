@@ -35,6 +35,7 @@ public class JF_NuevoReg extends javax.swing.JFrame {
         initComponents();
         this.getContentPane().setBackground(jPanel1.getBackground());
         jlRestriccionPT.setVisible(false);
+        jlRestriccion_campos.setVisible(false);
         pack();
         this.setLocationRelativeTo(null);
         setResizable(false);
@@ -61,9 +62,7 @@ public class JF_NuevoReg extends javax.swing.JFrame {
         jLNombre = new javax.swing.JLabel();
         jtNombre = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jtEdad = new javax.swing.JTextField();
-        jLUserName = new javax.swing.JLabel();
-        jtSexo = new javax.swing.JTextField();
+        jlFechaNac = new javax.swing.JLabel();
         jLPass1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -78,6 +77,9 @@ public class JF_NuevoReg extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jtApellido = new javax.swing.JTextField();
+        jlRestriccion_campos = new javax.swing.JLabel();
+        jcbSexo = new javax.swing.JComboBox();
+        jdcFechaNac = new com.toedter.calendar.JDateChooser();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -103,17 +105,8 @@ public class JF_NuevoReg extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         jLabel2.setText("Apellido(s):");
 
-        jtEdad.setColumns(10);
-
-        jLUserName.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
-        jLUserName.setText("Edad:");
-
-        jtSexo.setColumns(10);
-        jtSexo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtSexoActionPerformed(evt);
-            }
-        });
+        jlFechaNac.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
+        jlFechaNac.setText("Fecha de nacimiento:");
 
         jLPass1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         jLPass1.setText("Sexo:");
@@ -173,6 +166,18 @@ public class JF_NuevoReg extends javax.swing.JFrame {
             }
         });
 
+        jlRestriccion_campos.setForeground(new java.awt.Color(255, 51, 51));
+        jlRestriccion_campos.setText("**Todos los campos son obligatorios");
+
+        jcbSexo.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jcbSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "M", "F" }));
+        jcbSexo.setToolTipText("");
+        jcbSexo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbSexoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -183,30 +188,34 @@ public class JF_NuevoReg extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel5)
-                            .addComponent(jLUserName)
+                            .addComponent(jlFechaNac)
                             .addComponent(jLabel2)
                             .addComponent(jLNombre)
                             .addComponent(jLPass1)
                             .addComponent(jLabel6))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jtEdad, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jtTalla, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(jtSexo)
-                            .addComponent(jtNombre, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jtPeso)
-                            .addComponent(jtApellido))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                            .addComponent(jcbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jtPeso, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jdcFechaNac, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jtApellido, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jtNombre, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
+                                    .addComponent(jtTalla, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel4)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel8))
+                                    .addComponent(jLabel3)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(37, 37, 37)
-                        .addComponent(jlRestriccionPT)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jlRestriccion_campos)
+                            .addComponent(jlRestriccionPT))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
@@ -224,26 +233,26 @@ public class JF_NuevoReg extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLNombre))
                         .addGap(17, 17, 17)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jtApellido))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jtEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLUserName)))
-                    .addComponent(jLabel1))
-                .addGap(18, 18, 18)
+                            .addComponent(jlFechaNac)
+                            .addComponent(jdcFechaNac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLPass1)
-                    .addComponent(jtSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jcbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
@@ -255,23 +264,25 @@ public class JF_NuevoReg extends javax.swing.JFrame {
                             .addComponent(jLabel3))))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jtTalla, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jtTalla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel4)
+                        .addComponent(jLabel8))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel6)
-                        .addComponent(jcbCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel8)
-                        .addComponent(jLabel4)))
+                        .addComponent(jcbCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbSiguiente)
                     .addComponent(jBcancelar)
-                    .addComponent(jlRestriccionPT))
-                .addGap(52, 52, 52))
+                    .addComponent(jlRestriccion_campos))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jlRestriccionPT)
+                .addContainerGap())
         );
 
         jtNombre.getAccessibleContext().setAccessibleName("jpNombre");
         jtNombre.getAccessibleContext().setAccessibleDescription("");
-        jtEdad.getAccessibleContext().setAccessibleName("jpEdad");
 
         getContentPane().add(jPanel1);
 
@@ -312,12 +323,15 @@ public class JF_NuevoReg extends javax.swing.JFrame {
                 cat = Categoria.VOLUNTARIO;
             }
             
-            registro = new Registro(1, jtNombre.getText(), jtApellido.getText(), jtEdad.getText(), jtSexo.getText(), peso, talla, cat, "", 0.0);
+            if(jtApellido.getText().equals("") || jdcFechaNac.getDate().toString().equals("") || jtNombre.getText().equals("") || jtPeso.getText().equals("") || jtTalla.getText().equals("")){
+                throw new Exception("");
+            }
+            
+            registro = new Registro(1, jtNombre.getText(), jtApellido.getText(), jdcFechaNac.getDateFormatString(), jcbSexo.getModel().getSelectedItem().toString(), peso, talla, cat, "", 0.0);
             //vaciar campos
             jtNombre.setText("");
             jtApellido.setText("");
-            jtEdad.setText("");
-            jtSexo.setText("");
+            jdcFechaNac.cleanup();
             jtPeso.setText("");
             jtTalla.setText("");     
            
@@ -339,6 +353,8 @@ public class JF_NuevoReg extends javax.swing.JFrame {
             this.setVisible(false);
         }catch(NumberFormatException nFE){
             jlRestriccionPT.setVisible(true);
+        } catch (Exception ex) {
+            jlRestriccion_campos.setVisible(true);
         }
     }//GEN-LAST:event_jbSiguienteActionPerformed
 
@@ -358,9 +374,9 @@ public class JF_NuevoReg extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jtApellidoActionPerformed
 
-    private void jtSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtSexoActionPerformed
+    private void jcbSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbSexoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jtSexoActionPerformed
+    }//GEN-LAST:event_jcbSexoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -402,7 +418,6 @@ public class JF_NuevoReg extends javax.swing.JFrame {
     private javax.swing.JButton jBcancelar;
     private javax.swing.JLabel jLNombre;
     private javax.swing.JLabel jLPass1;
-    private javax.swing.JLabel jLUserName;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -416,12 +431,14 @@ public class JF_NuevoReg extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbSiguiente;
     private javax.swing.JComboBox jcbCategoria;
+    private javax.swing.JComboBox jcbSexo;
+    private com.toedter.calendar.JDateChooser jdcFechaNac;
+    private javax.swing.JLabel jlFechaNac;
     private javax.swing.JLabel jlRestriccionPT;
+    private javax.swing.JLabel jlRestriccion_campos;
     private javax.swing.JTextField jtApellido;
-    private javax.swing.JTextField jtEdad;
     private javax.swing.JTextField jtNombre;
     private javax.swing.JTextField jtPeso;
-    private javax.swing.JTextField jtSexo;
     private javax.swing.JTextField jtTalla;
     // End of variables declaration//GEN-END:variables
 }

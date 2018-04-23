@@ -4,3 +4,5 @@
 4,Josefina,Valdez,89,F,89.0,1.9,JEFE_FAMILIA,,0.0
 5,Petyr,Baeilish,32,M,60.0,1.75,PREP_COMIDA,,0.0
 6,Jacob,Keyes,57,M,96.0,1.94,DIRECTIVO,,0.0
+7,Juan,Rodriguez,89,F,89.0,1.9,ALUMNO,ITAM,0.0
+8,Erick,Rubio,d/MM/yyyy,M,54.0,1.6,ALUMNO,54,0.0
