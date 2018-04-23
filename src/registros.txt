@@ -1,2 +1,6 @@
 1,Jorge,Rubio,21,M,65.0,1.78,ALUMNO,TEC,0.0
 2,Pedro,Paramo,18,M,60.0,1.7,VOLUNTARIO,,0.0
+3,Florentino,Ariza,56,M,80.0,1.8,MAESTRO,NA,0.0
+4,Josefina,Valdez,89,F,89.0,1.9,JEFE_FAMILIA,,0.0
+5,Petyr,Baeilish,32,M,60.0,1.75,PREP_COMIDA,,0.0
+6,Jacob,Keyes,57,M,96.0,1.94,DIRECTIVO,,0.0

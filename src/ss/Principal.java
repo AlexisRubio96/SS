@@ -47,22 +47,24 @@ public class Principal {
                 try {
                     
                     Categoria categoria;
-            
+                    System.out.println(datos[7]);
                     //Determinar la categoria
-                    if(datos[7].equals("Alumno")){
+                    if(datos[7].equals("ALUMNO")){
                         categoria = Categoria.ALUMNO;
                     }
-                    else if(datos[7].equals("Directivo")){
+                    else if(datos[7].equals("DIRECTIVO")){
                         categoria = Categoria.DIRECTIVO;
                     }
-                    else if(datos[7].equals("Jefe de Familia")){
+                    else if(datos[7].equals("JEFE_FAMILIA")){
                         categoria = Categoria.JEFE_FAMILIA;
                     }
-                    else if(datos[7].equals("Preparadores de Comida")){
+                    else if(datos[7].equals("PREP_COMIDA")){
                         categoria = Categoria.PREP_COMIDA;
                     }
-                    else{
+                    else if(datos[7].equals("VOLUNTARIO")){
                         categoria = Categoria.VOLUNTARIO;
+                    }else{
+                        categoria = Categoria.MAESTRO;
                     }
                     //                  int IDregistro, String nombre , String apellido, String edad, String sexo, Double peso, Double talla, Categoria categoria, String escuela, Double tallaEdad)
                     reg= new Registro(Integer.parseInt(datos[0]),datos[1],datos[2], datos[3],datos[4], Double.parseDouble(datos[5]), Double.parseDouble(datos[6]), categoria, datos[8], Double.parseDouble(datos[9]));
