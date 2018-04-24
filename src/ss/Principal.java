@@ -8,6 +8,8 @@ package ss;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -36,10 +38,13 @@ public class Principal {
     
     private void llenarArregloRegistros() {
         Registro reg= null;
-        FileReader archivo;
+        
         try {
-            archivo = new FileReader("src/registros.txt");
-            BufferedReader entrada= new BufferedReader(archivo);        
+            
+            InputStream archivo = Principal.class.getResourceAsStream("/registros.txt");
+            //archivo = new FileReader("src/registros.txt");
+            BufferedReader entrada;        
+            entrada = new BufferedReader(new InputStreamReader(archivo));
             while(entrada.ready()){
                 String linea= entrada.readLine();
                 String[] datos= linea.split(",");
