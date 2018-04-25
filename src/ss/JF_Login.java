@@ -13,7 +13,10 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Dachely
+ *@author 
+ * Dachely Otero Argote
+ * Ernesto Alejandro Cervantes Villa
+ * Jorge Alexis Rubio Sumano
  */
 public class JF_Login extends javax.swing.JFrame {
     
@@ -28,6 +31,10 @@ public class JF_Login extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Login");
+        //System.out.println (new File (".").getAbsolutePath ());
+        System.out.println("Pruebaaa1");
+        System.out.println(System.getProperty("user.dir"));
+        System.out.println("Pruebaaa2");
         
     }
 

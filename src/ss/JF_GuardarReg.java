@@ -2,6 +2,7 @@ package ss;
 
 
 import java.awt.Color;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -332,7 +333,8 @@ public class JF_GuardarReg extends javax.swing.JFrame {
         FileWriter archivoSal; 
         
         try {
-            archivoSal = new FileWriter("src/registros.txt", true);
+            archivoSal = new FileWriter(System.getProperty("user.home") + File.separator + "registros.txt", true);
+            
             PrintWriter salida= new PrintWriter(archivoSal);            
             salida.println(r.getIDregistro()+","+ (r.getNombre())+","+ (r.getApellido()) +","+
                     r.getFechaNac()+","+ (r.getSexo())+","+ (r.getPeso()) +","+
@@ -342,7 +344,7 @@ public class JF_GuardarReg extends javax.swing.JFrame {
         } catch (Exception e) {
             
         }
-        }
+    }
         /*catch (IOException ex) {
             Logger.getLogger(Registrar.class.getName()).log(Level.SEVERE, null, ex);
         }*/
