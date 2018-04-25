@@ -42,6 +42,7 @@ public final class ModeloTabla extends AbstractTableModel{
                         datosTabla.add(regis);
                     }
                 }
+                break;
             case 1:
                 for (Registro regis : principal.getRegistros()) {
                     if(regis.getCategoria()==Categoria.MAESTRO){
